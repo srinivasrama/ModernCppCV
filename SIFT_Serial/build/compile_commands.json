@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/bruno/Learning/CppComputerVision/SIFT_Serial/build",
+  "command": "/bin/c++   -I/home/bruno/Learning/CppComputerVision/SIFT_Serial/include -I/home/bruno/Learning/CppComputerVision/SIFT_Serial/src -isystem /usr/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/siftserial.dir/src/convert_dataset.cpp.o -c /home/bruno/Learning/CppComputerVision/SIFT_Serial/src/convert_dataset.cpp",
+  "file": "/home/bruno/Learning/CppComputerVision/SIFT_Serial/src/convert_dataset.cpp"
+},
+{
+  "directory": "/home/bruno/Learning/CppComputerVision/SIFT_Serial/build",
+  "command": "/bin/c++   -I/home/bruno/Learning/CppComputerVision/SIFT_Serial/include -I/home/bruno/Learning/CppComputerVision/SIFT_Serial/src -isystem /usr/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/siftserial.dir/src/serialize.cpp.o -c /home/bruno/Learning/CppComputerVision/SIFT_Serial/src/serialize.cpp",
+  "file": "/home/bruno/Learning/CppComputerVision/SIFT_Serial/src/serialize.cpp"
+}
+]

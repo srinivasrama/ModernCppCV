@@ -38,7 +38,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "siftserial::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-siftserial-Debug-c8db55f1a2fd523f3677.json",
+					"jsonFile" : "target-siftserial-Debug-440f8d81843620205dff.json",
 					"name" : "siftserial",
 					"projectIndex" : 0
 				}
@@ -48,8 +48,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/bruno/Learning/CppComputerVision/SIFT_Serial/build",
-		"source" : "/home/bruno/Learning/CppComputerVision/SIFT_Serial"
+		"build" : "/home/bruno/Learning/ModernCppCV/SIFT_Serial/build",
+		"source" : "/home/bruno/Learning/ModernCppCV/SIFT_Serial"
 	},
 	"version" : 
 	{

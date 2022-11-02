@@ -71,11 +71,11 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/home/bruno/Learning/CppComputerVision/SIFT_Serial/include"
+					"path" : "/home/bruno/Learning/ModernCppCV/SIFT_Serial/include"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/bruno/Learning/CppComputerVision/SIFT_Serial/src"
+					"path" : "/home/bruno/Learning/ModernCppCV/SIFT_Serial/src"
 				},
 				{
 					"backtrace" : 5,

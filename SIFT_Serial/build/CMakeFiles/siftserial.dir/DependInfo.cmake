@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bruno/Learning/CppComputerVision/SIFT_Serial/src/convert_dataset.cpp" "/home/bruno/Learning/CppComputerVision/SIFT_Serial/build/CMakeFiles/siftserial.dir/src/convert_dataset.cpp.o"
-  "/home/bruno/Learning/CppComputerVision/SIFT_Serial/src/serialize.cpp" "/home/bruno/Learning/CppComputerVision/SIFT_Serial/build/CMakeFiles/siftserial.dir/src/serialize.cpp.o"
+  "/home/bruno/Learning/ModernCppCV/SIFT_Serial/src/convert_dataset.cpp" "/home/bruno/Learning/ModernCppCV/SIFT_Serial/build/CMakeFiles/siftserial.dir/src/convert_dataset.cpp.o"
+  "/home/bruno/Learning/ModernCppCV/SIFT_Serial/src/serialize.cpp" "/home/bruno/Learning/ModernCppCV/SIFT_Serial/build/CMakeFiles/siftserial.dir/src/serialize.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

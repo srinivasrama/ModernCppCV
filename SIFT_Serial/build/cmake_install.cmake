@@ -1,8 +1,8 @@
-# Install script for directory: /home/bruno/Learning/CppComputerVision/SIFT_Serial
+# Install script for directory: /home/bruno/Learning/ModernCppCV/SIFT_Serial
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/bruno/Learning/CppComputerVision/SIFT_Serial")
+  set(CMAKE_INSTALL_PREFIX "/home/bruno/Learning/ModernCppCV/SIFT_Serial")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/bruno/Learning/CppComputerVision/SIFT_Serial/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/bruno/Learning/ModernCppCV/SIFT_Serial/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

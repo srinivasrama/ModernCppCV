@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bruno/Learning/CppComputerVision/SIFT_Serial
+CMAKE_SOURCE_DIR = /home/bruno/Learning/ModernCppCV/SIFT_Serial
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bruno/Learning/CppComputerVision/SIFT_Serial/build
+CMAKE_BINARY_DIR = /home/bruno/Learning/ModernCppCV/SIFT_Serial/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/siftserial.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/siftserial.dir/flags.make
 
 CMakeFiles/siftserial.dir/src/convert_dataset.cpp.o: CMakeFiles/siftserial.dir/flags.make
 CMakeFiles/siftserial.dir/src/convert_dataset.cpp.o: ../src/convert_dataset.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bruno/Learning/CppComputerVision/SIFT_Serial/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/siftserial.dir/src/convert_dataset.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/siftserial.dir/src/convert_dataset.cpp.o -c /home/bruno/Learning/CppComputerVision/SIFT_Serial/src/convert_dataset.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bruno/Learning/ModernCppCV/SIFT_Serial/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/siftserial.dir/src/convert_dataset.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/siftserial.dir/src/convert_dataset.cpp.o -c /home/bruno/Learning/ModernCppCV/SIFT_Serial/src/convert_dataset.cpp
 
 CMakeFiles/siftserial.dir/src/convert_dataset.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/siftserial.dir/src/convert_dataset.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruno/Learning/CppComputerVision/SIFT_Serial/src/convert_dataset.cpp > CMakeFiles/siftserial.dir/src/convert_dataset.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruno/Learning/ModernCppCV/SIFT_Serial/src/convert_dataset.cpp > CMakeFiles/siftserial.dir/src/convert_dataset.cpp.i
 
 CMakeFiles/siftserial.dir/src/convert_dataset.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/siftserial.dir/src/convert_dataset.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Learning/CppComputerVision/SIFT_Serial/src/convert_dataset.cpp -o CMakeFiles/siftserial.dir/src/convert_dataset.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Learning/ModernCppCV/SIFT_Serial/src/convert_dataset.cpp -o CMakeFiles/siftserial.dir/src/convert_dataset.cpp.s
 
 CMakeFiles/siftserial.dir/src/serialize.cpp.o: CMakeFiles/siftserial.dir/flags.make
 CMakeFiles/siftserial.dir/src/serialize.cpp.o: ../src/serialize.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bruno/Learning/CppComputerVision/SIFT_Serial/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/siftserial.dir/src/serialize.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/siftserial.dir/src/serialize.cpp.o -c /home/bruno/Learning/CppComputerVision/SIFT_Serial/src/serialize.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bruno/Learning/ModernCppCV/SIFT_Serial/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/siftserial.dir/src/serialize.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/siftserial.dir/src/serialize.cpp.o -c /home/bruno/Learning/ModernCppCV/SIFT_Serial/src/serialize.cpp
 
 CMakeFiles/siftserial.dir/src/serialize.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/siftserial.dir/src/serialize.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruno/Learning/CppComputerVision/SIFT_Serial/src/serialize.cpp > CMakeFiles/siftserial.dir/src/serialize.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruno/Learning/ModernCppCV/SIFT_Serial/src/serialize.cpp > CMakeFiles/siftserial.dir/src/serialize.cpp.i
 
 CMakeFiles/siftserial.dir/src/serialize.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/siftserial.dir/src/serialize.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Learning/CppComputerVision/SIFT_Serial/src/serialize.cpp -o CMakeFiles/siftserial.dir/src/serialize.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Learning/ModernCppCV/SIFT_Serial/src/serialize.cpp -o CMakeFiles/siftserial.dir/src/serialize.cpp.s
 
 # Object files for target siftserial
 siftserial_OBJECTS = \
@@ -143,7 +143,7 @@ siftserial: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.2.0
 siftserial: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.2.0
 siftserial: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.2.0
 siftserial: CMakeFiles/siftserial.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bruno/Learning/CppComputerVision/SIFT_Serial/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable siftserial"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bruno/Learning/ModernCppCV/SIFT_Serial/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable siftserial"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/siftserial.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -156,6 +156,6 @@ CMakeFiles/siftserial.dir/clean:
 .PHONY : CMakeFiles/siftserial.dir/clean
 
 CMakeFiles/siftserial.dir/depend:
-	cd /home/bruno/Learning/CppComputerVision/SIFT_Serial/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bruno/Learning/CppComputerVision/SIFT_Serial /home/bruno/Learning/CppComputerVision/SIFT_Serial /home/bruno/Learning/CppComputerVision/SIFT_Serial/build /home/bruno/Learning/CppComputerVision/SIFT_Serial/build /home/bruno/Learning/CppComputerVision/SIFT_Serial/build/CMakeFiles/siftserial.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bruno/Learning/ModernCppCV/SIFT_Serial/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bruno/Learning/ModernCppCV/SIFT_Serial /home/bruno/Learning/ModernCppCV/SIFT_Serial /home/bruno/Learning/ModernCppCV/SIFT_Serial/build /home/bruno/Learning/ModernCppCV/SIFT_Serial/build /home/bruno/Learning/ModernCppCV/SIFT_Serial/build/CMakeFiles/siftserial.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/siftserial.dir/depend
 

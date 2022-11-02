@@ -6,8 +6,11 @@
 #define SERIALIZE_HPP_
 
 #include <string>
+#include <fstream>
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
 
-#include <opencv2/core/mat.hpp>
 
 namespace ipb::serialization {
 

@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bruno/Learning/CppComputerVision/SIFT_Serial
+CMAKE_SOURCE_DIR = /home/bruno/Learning/ModernCppCV/SIFT_Serial
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bruno/Learning/CppComputerVision/SIFT_Serial/build
+CMAKE_BINARY_DIR = /home/bruno/Learning/ModernCppCV/SIFT_Serial/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ clean: CMakeFiles/siftserial.dir/clean
 CMakeFiles/siftserial.dir/all:
 	$(MAKE) -f CMakeFiles/siftserial.dir/build.make CMakeFiles/siftserial.dir/depend
 	$(MAKE) -f CMakeFiles/siftserial.dir/build.make CMakeFiles/siftserial.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bruno/Learning/CppComputerVision/SIFT_Serial/build/CMakeFiles --progress-num=1,2,3 "Built target siftserial"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bruno/Learning/ModernCppCV/SIFT_Serial/build/CMakeFiles --progress-num=1,2,3 "Built target siftserial"
 .PHONY : CMakeFiles/siftserial.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/siftserial.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/CppComputerVision/SIFT_Serial/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/SIFT_Serial/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/siftserial.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/CppComputerVision/SIFT_Serial/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/SIFT_Serial/build/CMakeFiles 0
 .PHONY : CMakeFiles/siftserial.dir/rule
 
 # Convenience name for target.

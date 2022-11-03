@@ -2,10 +2,10 @@
 // @author    Ignacio Vizzo     [ivizzo@uni-bonn.de]
 //
 // Copyright (c) 2020 Ignacio Vizzo, all rights reserved
-#include <filesystem>
+#include <experimental/filesystem>
 #include <string>
 
-#include <catch2/catch.hpp>
+#include <catch.hpp>
 #include <opencv2/core/mat.hpp>
 #include <opencv2/imgcodecs.hpp>
 
@@ -13,7 +13,7 @@
 #include "sifts_internal.hpp"
 #include "utils.hpp"
 
-namespace fs = std::filesystem;
+namespace fs = std::experimental::filesystem;
 SCENARIO("cv::Mat img serialization", "[serialization]") {
   const std::string lenna_path = "data/lenna.png";
   const std::string lenna_bin_path = "data/lenna.bin";

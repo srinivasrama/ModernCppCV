@@ -16,16 +16,13 @@
 
 using std::string;
 using std::vector;
-
-using cv::xfeatures2d::SiftDescriptorExtractor;
-using cv::xfeatures2d::SiftFeatureDetector;
-
-std::tuple<cv::Mat, cv::Mat> ComputeSifts(const string& fileName) {
-  const cv::Mat kInput = cv::imread(fileName, cv::IMREAD_GRAYSCALE);
+ 
+std::tuple<cv::Mat, cv::Mat> ComputeSifts(const std::string& fileName) {
+  const cv::Mat kInput = cv::imread(fileName);
 
   // detect key points
-  auto detector = SiftFeatureDetector::create();
-  vector<cv::KeyPoint> keypoints;
+  cv::Ptr<cv::Feature2D>  detector= cv::SIFT::create();
+  std::vector<cv::KeyPoint> keypoints;
   detector->detect(kInput, keypoints);
 
   // present the keypoints on the image
@@ -34,7 +31,7 @@ std::tuple<cv::Mat, cv::Mat> ComputeSifts(const string& fileName) {
 
   // extract the SIFT descriptors
   cv::Mat descriptors;
-  auto extractor = SiftDescriptorExtractor::create();
+  cv::Ptr<cv::DescriptorExtractor> extractor = cv::SIFT::create();
   extractor->compute(kInput, keypoints, descriptors);
 
   return std::make_tuple(descriptors, image_with_keypoints);

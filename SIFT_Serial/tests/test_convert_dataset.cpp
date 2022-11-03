@@ -3,17 +3,17 @@
 //
 // Copyright (c) 2020 Ignacio Vizzo, all rights reserved
 
-#include <filesystem>
+#include <experimental/filesystem>
 #include <fstream>
 #include <string>
 
-#include <catch2/catch.hpp>
+#include <catch.hpp>
 #include <opencv2/core/mat.hpp>
 
 #include "convert_dataset.hpp"
 #include "homework_5.h"
 
-namespace fs = std::filesystem;
+namespace fs = std::experimental::filesystem;
 TEST_CASE("Compute SIFTS from dataset and serialize", "[convert_dataset]") {
   const std::string img_path = "data/freiburg/images/";
   const std::string bin_path = "data/freiburg/bin/";

@@ -18,5 +18,13 @@ set(DIVISION_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 include_directories(${DIVISIBLE_INSTALL_INCLUDE_DIR})
 include_directories(${DIVISION_SOURCE_DIR})
 # Add project executable
-add_executable(siftserial ${DIVISION_SOURCE_DIR}/convert_dataset.cpp ${DIVISION_SOURCE_DIR}/serialize.cpp )
-target_link_libraries(siftserial ${OpenCV_LIBRARIES})
+# add_executable(siftserial ${DIVISION_SOURCE_DIR}/convert_dataset.cpp ${DIVISION_SOURCE_DIR}/serialize.cpp )
+# target_link_libraries(siftserial ${OpenCV_LIBRARIES} stdc++fs)
+
+# add serialize library
+add_library(mat_serialization  src/serialize.cpp)
+add_library(convert_dataset src/convert_dataset.cpp)
+target_link_libraries(mat_serialization convert_dataset ${OpenCV_LIBRARIES} stdc++fs)
+
+enable_testing ()
+add_subdirectory (tests)

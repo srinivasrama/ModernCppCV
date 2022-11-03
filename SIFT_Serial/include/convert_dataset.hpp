@@ -8,9 +8,15 @@
 #include <experimental/filesystem>
 #include <string>
 #include <vector>
-
-#include <opencv2/core/mat.hpp>
-
+#include <iostream>
+#include <serialize.hpp>
+#include <opencv2/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/features2d.hpp>
+#include <opencv2/xfeatures2d.hpp>
+#include <opencv2/xfeatures2d/nonfree.hpp>
+using cv::SIFT;
 namespace ipb::serialization::sifts {
 /**
  * @brief This helper function reads all the png files from a given path,
@@ -41,6 +47,10 @@ void ConvertDataset(const std::experimental::filesystem::path& img_path);
  * binary dataset.
  */
 std::vector<cv::Mat> LoadDataset(const std::experimental::filesystem::path& bin_path);
+
+
+
+std::tuple<cv::Mat, cv::Mat> ComputeSifts(const std::string& fileName);
 
 }  // namespace ipb::serialization::sifts
 

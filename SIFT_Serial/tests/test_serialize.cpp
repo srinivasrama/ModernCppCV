@@ -5,18 +5,17 @@
 #include <experimental/filesystem>
 #include <string>
 
-#include <catch.hpp>
 #include <opencv2/core/mat.hpp>
 #include <opencv2/imgcodecs.hpp>
 
 #include "homework_5.h"
 #include "sifts_internal.hpp"
 #include "utils.hpp"
-
+#include <catch2/catch_all.hpp>
 namespace fs = std::experimental::filesystem;
 SCENARIO("cv::Mat img serialization", "[serialization]") {
-  const std::string lenna_path = "data/lenna.png";
-  const std::string lenna_bin_path = "data/lenna.bin";
+  const std::string lenna_path = "../../tests/data/lenna.png";
+  const std::string lenna_bin_path = "../../tests/data/lenna.bin";
 
   GIVEN("The lenna img") {
     auto lenna = cv::imread(lenna_path, cv::IMREAD_GRAYSCALE);
@@ -44,8 +43,8 @@ SCENARIO("cv::Mat img serialization", "[serialization]") {
 }
 
 SCENARIO("cv::Mat SIFT serialization", "[serialization]") {
-  const std::string lenna_path = "data/lenna.png";
-  const std::string descriptors_bin_path = "data/lenna_sifts.bin";
+  const std::string lenna_path = "../../tests/data/lenna.png";
+  const std::string descriptors_bin_path = "../../tests/data/lenna_sifts.bin";
 
   GIVEN("SIFTS descriptors are computed on lenna") {
     const auto [descriptors, image_with_kp] = ComputeSifts(lenna_path);

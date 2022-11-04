@@ -15,7 +15,7 @@ target_link_libraries(${TEST_BINARY}
                       convert_dataset
                       mat_serialization
                       sifts_internal
-                      Catch2::Catch2
+                      Catch2::Catch2WithMain
                       stdc++fs)
 
 catch_discover_tests(${TEST_BINARY} WORKING_DIRECTORY

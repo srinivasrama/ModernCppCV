@@ -3,7 +3,6 @@
 namespace ipb::serialization {
 
 void Serialize(const cv::Mat& m, const std::string& filename){
-    //TODO: Get stem for matching filename
     std::ofstream f_out(filename,std::ios_base::out| std::ios_base::binary);
     int rows= m.rows;
     int cols= m.cols;

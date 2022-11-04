@@ -21,14 +21,14 @@ std::tuple<cv::Mat, cv::Mat> ComputeSifts(const std::string& fileName) {
   return std::make_tuple(descriptors, image_with_keypoints);
 }
 void ConvertDataset(const std::experimental::filesystem::path &img_path) {
+  std::experimental::filesystem::path bin_dir="bin";
+  std::experimental::filesystem::create_directory(img_path.parent_path()/bin_dir);
   for (auto const &dir_entry : std::experimental::filesystem::directory_iterator{img_path}) {
         if(dir_entry.path().extension()==".png"){
             auto sifts= ComputeSifts(dir_entry.path());
             cv::Mat descriptors= std::get<0>(sifts);
             std::experimental::filesystem::path fileToCopy = dir_entry;
             fileToCopy.replace_extension(".bin"); 
-            std::experimental::filesystem::path bin_dir="bin";
-            std::experimental::filesystem::create_directory(img_path.parent_path()/bin_dir);
             auto output_file= img_path.parent_path()/bin_dir/ fileToCopy.filename();
             Serialize(descriptors,output_file);
         }

@@ -1,6 +1,8 @@
 #ifndef IMAGE_HPP_
 #define IMAGE_HPP_
 #include <vector>
+#include <string>
+#include "io_tools.hpp"
 using mat = std::vector<int>;
 
 namespace igg{
@@ -28,9 +30,16 @@ namespace igg{
         //pixels access from image
         //TODO: document function
         inline const int& at(const int &row,const int &col) const { return data_[row*cols_+col];}
-        //pixels modified 
+        //pixels modified
+        //TODO: document function
         inline int& at(const int &row,const int &col)  { return data_[row*cols_+col];}
+        
+        //TODO: read image from pgm file
+        bool FillFromPgm(const std::string& file_name);
 
+        //TODO: write image object to file
+        void WriteToPgm_(const std::string& file_name);
+         
         private:
             int rows_=0;
             int cols_=0;

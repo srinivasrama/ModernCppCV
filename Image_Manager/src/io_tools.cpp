@@ -3,7 +3,7 @@
 // @maintainer Ignacio Vizzo     [ivizzo@uni-bonn.de]
 //
 // Copyright (c) 2019 Igor Bogoslavskyi , all rights reserved
-#include "igg_image/io_tools.hpp"
+#include "io_tools.hpp"
 
 #include <bits/stdint-uintn.h>
 
@@ -25,7 +25,7 @@ ImageData ReadFromPgm(const std::string& file_name) {
   int rows = 0;
   int cols = 0;
   int max_val = 0;
-  std::vector<uint8_t> data;
+  std::vector<int> data;
   in >> type >> rows >> cols >> max_val;
 
   data.resize(rows * cols);
@@ -36,7 +36,7 @@ ImageData ReadFromPgm(const std::string& file_name) {
       data[r * cols + c] = byte;
     }
   }
-  return {rows, cols, static_cast<uint8_t>(max_val), data};
+  return {rows, cols, max_val, data};
 }
 
 bool WriteToPgm(const ImageData& image_data, const std::string& file_name) {
@@ -45,9 +45,9 @@ bool WriteToPgm(const ImageData& image_data, const std::string& file_name) {
     return false;
   }
 
-  out << "P2" << std::endl
-      << image_data.rows << " " << image_data.cols << std::endl
-      << image_data.max_val << std::endl;
+  out << "P2" << std::endl;
+  out<< image_data.rows << " " << image_data.cols << std::endl;
+  out<< image_data.max_val << std::endl;
   for (int r = 0; r < image_data.rows; ++r) {
     for (int c = 0; c < image_data.cols; ++c) {
       out << image_data.data[r * image_data.cols + c] << " ";

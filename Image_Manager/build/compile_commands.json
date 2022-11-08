@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/bruno/Learning/ModernCppCV/Image_Manager/build",
+  "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/Image_Manager/include -I/home/bruno/Learning/ModernCppCV/Image_Manager/src  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/image_manager.dir/src/image.cpp.o -c /home/bruno/Learning/ModernCppCV/Image_Manager/src/image.cpp",
+  "file": "/home/bruno/Learning/ModernCppCV/Image_Manager/src/image.cpp"
+},
+{
+  "directory": "/home/bruno/Learning/ModernCppCV/Image_Manager/build",
+  "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/Image_Manager/include -I/home/bruno/Learning/ModernCppCV/Image_Manager/src  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/image_manager.dir/src/io_tools.cpp.o -c /home/bruno/Learning/ModernCppCV/Image_Manager/src/io_tools.cpp",
+  "file": "/home/bruno/Learning/ModernCppCV/Image_Manager/src/io_tools.cpp"
+}
+]

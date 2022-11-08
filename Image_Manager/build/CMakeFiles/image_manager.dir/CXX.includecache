@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/image.hpp
+vector
+-
+string
+-
+io_tools.hpp
+../include/io_tools.hpp
+
+../include/io_tools.hpp
+cstddef
+-
+string
+-
+vector
+-
+
+/home/bruno/Learning/ModernCppCV/Image_Manager/src/image.cpp
+image.hpp
+/home/bruno/Learning/ModernCppCV/Image_Manager/src/image.hpp
+iostream
+-
+
+/home/bruno/Learning/ModernCppCV/Image_Manager/src/io_tools.cpp
+io_tools.hpp
+/home/bruno/Learning/ModernCppCV/Image_Manager/src/io_tools.hpp
+bits/stdint-uintn.h
+-
+fstream
+-
+ios
+-
+iostream
+-
+string
+-
+

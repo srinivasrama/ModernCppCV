@@ -24,13 +24,32 @@ void Image::WriteToPgm_(const std::string& file_name){
     if(image_data.data.empty()) return;
     io_tools::WriteToPgm(image_data, file_name);
 }
+std::vector<float> Image::ComputeHistogram(int bins) const{
+      float interval= 255./bins;
+      std::vector<float> histo(bins,0.);
+      for(const auto &pixel: data_){
+        float histo_val_prev=0.;
+        for(int i=0;i<bins;i++){
+          float histo_val_current= (i+1)*1.*interval;
+          if(pixel-histo_val_prev>=0 && pixel-histo_val_current<=0) histo[i]+=1./data_.size();
+          histo_val_prev= histo_val_current;
+        }
+      }
+      return histo;
+}
+// void Image::DownScale(int scale){
 
+// }
 } // namespace igg
 
 int main() { 
   
   igg::Image image;
-  image.FillFromPgm("/home/bruno/Learning/ModernCppCV/Image_Manager/data/lena.ascii.pgm");
-  image.WriteToPgm_("/home/bruno/Learning/ModernCppCV/Image_Manager/data/out.ascii.pgm");
+  image.FillFromPgm("/home/bruno/Learning/ModernCppCV/Image_Manager/tests/data/dummy_file.pgm");
+  const auto& image_ref = image;
+  auto histogram = image_ref.ComputeHistogram(10);
+  std::cout << "SIZE=" << histogram.size() << std::endl;
+  std::cout << "value=" << histogram[0] << std::endl;
+  std::cout << "value=" << histogram[9] << std::endl;
   return 0;
    }

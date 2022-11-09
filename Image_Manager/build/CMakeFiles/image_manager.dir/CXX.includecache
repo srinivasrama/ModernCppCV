@@ -28,17 +28,3 @@ image.hpp
 iostream
 -
 
-/home/bruno/Learning/ModernCppCV/Image_Manager/src/io_tools.cpp
-io_tools.hpp
-/home/bruno/Learning/ModernCppCV/Image_Manager/src/io_tools.hpp
-bits/stdint-uintn.h
--
-fstream
--
-ios
--
-iostream
--
-string
--
-

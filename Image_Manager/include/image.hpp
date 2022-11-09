@@ -39,7 +39,12 @@ namespace igg{
 
         //TODO: write image object to file
         void WriteToPgm_(const std::string& file_name);
+
+        // void DownScale(int scale);
+        
+        // void UpScale(int scale);
          
+        std::vector<float> ComputeHistogram(int bins) const;
         private:
             int rows_=0;
             int cols_=0;

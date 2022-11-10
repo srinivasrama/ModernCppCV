@@ -1,1 +1,0 @@
-/usr/bin/c++  -std=c++17 -pthread -std=c++11 -O3 -g   CMakeFiles/image_manager.dir/src/image.cpp.o CMakeFiles/image_manager.dir/src/io_tools.cpp.o  -o image_manager 

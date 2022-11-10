@@ -28,22 +28,25 @@ namespace igg{
             return cols_;
             }
         //pixels access from image
-        //TODO: document function
         inline const int& at(const int &row,const int &col) const { return data_[row*cols_+col];}
         //pixels modified
-        //TODO: document function
         inline int& at(const int &row,const int &col)  { return data_[row*cols_+col];}
         
-        //TODO: read image from pgm file
+        //read image from pgm file
         bool FillFromPgm(const std::string& file_name);
 
-        //TODO: write image object to file
+        //write image object to file
         void WriteToPgm_(const std::string& file_name);
 
-        // void DownScale(int scale);
+        //Copied from https://github.com/sbrhss/Modern-CPP-Bonn/blob/master/HW3/igg_image/src/igg_image/image.cpp
+        //TODO: Understand this shit
+        void DownScale(int scale);
         
-        // void UpScale(int scale);
-         
+        //Copied from https://github.com/sbrhss/Modern-CPP-Bonn/blob/master/HW3/igg_image/src/igg_image/image.cpp
+        //TODO: Understand this shit
+        void UpScale(int scale);
+        
+         //computer histogram from image pixels values
         std::vector<float> ComputeHistogram(int bins) const;
         private:
             int rows_=0;
@@ -51,6 +54,5 @@ namespace igg{
             mat data_;
             
     };
-
 };
 #endif

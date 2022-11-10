@@ -14,4 +14,8 @@ set(DIVISION_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 include_directories(${DIVISIBLE_INSTALL_INCLUDE_DIR})
 include_directories(${DIVISION_SOURCE_DIR})
 
-add_executable(image_manager ${DIVISION_SOURCE_DIR}/image.cpp ${DIVISION_SOURCE_DIR}/io_tools.cpp)
+# add_executable(image_manager ${DIVISION_SOURCE_DIR}/image.cpp ${DIVISION_SOURCE_DIR}/io_tools.cpp)
+# add serialize library
+add_library(image  src/image.cpp src/io_tools.cpp)
+enable_testing ()
+add_subdirectory (tests)

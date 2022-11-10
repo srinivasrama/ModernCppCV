@@ -1,3 +1,0 @@
-/home/bruno/Learning/ModernCppCV/Image_Manager/build/CMakeFiles/rebuild_cache.dir
-/home/bruno/Learning/ModernCppCV/Image_Manager/build/CMakeFiles/edit_cache.dir
-/home/bruno/Learning/ModernCppCV/Image_Manager/build/CMakeFiles/image_manager.dir

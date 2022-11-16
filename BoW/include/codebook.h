@@ -3,9 +3,12 @@
 #include <map>
 #include<set>
 #include <opencv2/core.hpp>
+#include <opencv2/opencv.hpp>
 #include <string>
 #include <vector>
-namespace igg {
+#include <functional>
+#include <numeric>
+namespace ipb {
 /**
  * @brief
  * 1. Given cluster centroids i initialized in some way,

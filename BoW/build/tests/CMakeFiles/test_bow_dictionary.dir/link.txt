@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++17 -pthread -std=c++11 -O3 -g   CMakeFiles/test_bow_dictionary.dir/test_bow_dictionary.cpp.o  -o test_bow_dictionary  -lbow_dictionary -lserialization /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a -lpthread 

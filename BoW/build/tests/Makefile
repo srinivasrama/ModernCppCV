@@ -91,14 +91,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles /home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles /home/bruno/Learning/ModernCppCV/BoW/build/tests/CMakeFiles/progress.marks
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(MAKE) -f CMakeFiles/Makefile2 tests/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -108,71 +108,87 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named kmeans
+# Convenience name for target.
+tests/CMakeFiles/test_kmeans.dir/rule:
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_kmeans.dir/rule
+.PHONY : tests/CMakeFiles/test_kmeans.dir/rule
 
-# Build rule for target.
-kmeans: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 kmeans
-.PHONY : kmeans
+# Convenience name for target.
+test_kmeans: tests/CMakeFiles/test_kmeans.dir/rule
 
-# fast build rule for target.
-kmeans/fast:
-	$(MAKE) -f CMakeFiles/kmeans.dir/build.make CMakeFiles/kmeans.dir/build
-.PHONY : kmeans/fast
-
-#=============================================================================
-# Target rules for targets named test_kmeans
-
-# Build rule for target.
-test_kmeans: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_kmeans
 .PHONY : test_kmeans
 
 # fast build rule for target.
 test_kmeans/fast:
-	$(MAKE) -f tests/CMakeFiles/test_kmeans.dir/build.make tests/CMakeFiles/test_kmeans.dir/build
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(MAKE) -f tests/CMakeFiles/test_kmeans.dir/build.make tests/CMakeFiles/test_kmeans.dir/build
 .PHONY : test_kmeans/fast
 
-src/codebook.o: src/codebook.cpp.o
+test_data.o: test_data.cpp.o
 
-.PHONY : src/codebook.o
+.PHONY : test_data.o
 
 # target to build an object file
-src/codebook.cpp.o:
-	$(MAKE) -f CMakeFiles/kmeans.dir/build.make CMakeFiles/kmeans.dir/src/codebook.cpp.o
-.PHONY : src/codebook.cpp.o
+test_data.cpp.o:
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(MAKE) -f tests/CMakeFiles/test_kmeans.dir/build.make tests/CMakeFiles/test_kmeans.dir/test_data.cpp.o
+.PHONY : test_data.cpp.o
 
-src/codebook.i: src/codebook.cpp.i
+test_data.i: test_data.cpp.i
 
-.PHONY : src/codebook.i
+.PHONY : test_data.i
 
 # target to preprocess a source file
-src/codebook.cpp.i:
-	$(MAKE) -f CMakeFiles/kmeans.dir/build.make CMakeFiles/kmeans.dir/src/codebook.cpp.i
-.PHONY : src/codebook.cpp.i
+test_data.cpp.i:
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(MAKE) -f tests/CMakeFiles/test_kmeans.dir/build.make tests/CMakeFiles/test_kmeans.dir/test_data.cpp.i
+.PHONY : test_data.cpp.i
 
-src/codebook.s: src/codebook.cpp.s
+test_data.s: test_data.cpp.s
 
-.PHONY : src/codebook.s
+.PHONY : test_data.s
 
 # target to generate assembly for a file
-src/codebook.cpp.s:
-	$(MAKE) -f CMakeFiles/kmeans.dir/build.make CMakeFiles/kmeans.dir/src/codebook.cpp.s
-.PHONY : src/codebook.cpp.s
+test_data.cpp.s:
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(MAKE) -f tests/CMakeFiles/test_kmeans.dir/build.make tests/CMakeFiles/test_kmeans.dir/test_data.cpp.s
+.PHONY : test_data.cpp.s
+
+test_kmeans.o: test_kmeans.cpp.o
+
+.PHONY : test_kmeans.o
+
+# target to build an object file
+test_kmeans.cpp.o:
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(MAKE) -f tests/CMakeFiles/test_kmeans.dir/build.make tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o
+.PHONY : test_kmeans.cpp.o
+
+test_kmeans.i: test_kmeans.cpp.i
+
+.PHONY : test_kmeans.i
+
+# target to preprocess a source file
+test_kmeans.cpp.i:
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(MAKE) -f tests/CMakeFiles/test_kmeans.dir/build.make tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.i
+.PHONY : test_kmeans.cpp.i
+
+test_kmeans.s: test_kmeans.cpp.s
+
+.PHONY : test_kmeans.s
+
+# target to generate assembly for a file
+test_kmeans.cpp.s:
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(MAKE) -f tests/CMakeFiles/test_kmeans.dir/build.make tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.s
+.PHONY : test_kmeans.cpp.s
 
 # Help Target
 help:
@@ -183,11 +199,13 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... kmeans"
 	@echo "... test_kmeans"
-	@echo "... src/codebook.o"
-	@echo "... src/codebook.i"
-	@echo "... src/codebook.s"
+	@echo "... test_data.o"
+	@echo "... test_data.i"
+	@echo "... test_data.s"
+	@echo "... test_kmeans.o"
+	@echo "... test_kmeans.i"
+	@echo "... test_kmeans.s"
 .PHONY : help
 
 
@@ -199,6 +217,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/bruno/Learning/ModernCppCV/BoW/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,3 +1,8 @@
 /home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles/rebuild_cache.dir
 /home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles/edit_cache.dir
+/home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles/test.dir
 /home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles/kmeans.dir
+/home/bruno/Learning/ModernCppCV/BoW/build/tests/CMakeFiles/rebuild_cache.dir
+/home/bruno/Learning/ModernCppCV/BoW/build/tests/CMakeFiles/edit_cache.dir
+/home/bruno/Learning/ModernCppCV/BoW/build/tests/CMakeFiles/test.dir
+/home/bruno/Learning/ModernCppCV/BoW/build/tests/CMakeFiles/test_kmeans.dir

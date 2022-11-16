@@ -1,6 +1,6 @@
 #include "codebook.h"
 
-namespace igg {
+namespace ipb {
 
 cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
   // 1. Given cluster centroids i initialized randomly
@@ -18,7 +18,7 @@ cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
   std::map<int, std::vector<cv::Mat>> clusters;
   for (int i = 0; i < max_iter; i++) {
     for (const auto &descriptor : descriptors) {
-      // TODO: 1. Compute the distance from each point x to each cluster
+      // 1. Compute the distance from each point x to each cluster
       // centroid
       float distance_min = 0;
       const float *descriptor_ptr = descriptor.ptr<float>(0);
@@ -42,19 +42,22 @@ cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
       }
       clusters[centroid_id].push_back(descriptor);
     }
-    //3. TODO: Reassign centroids 
+    //3. Reassign centroids 
     for (int j = 0; j < k; j++) {
       auto cluster= clusters[k];  
       cv::Mat acc(cluster[0].size(), CV_64F, cv::Scalar(0));
       for(const auto &c: cluster){
-          std::accumulate(c,acc);
+          cv::accumulate(c,acc);
       }
       cv::Mat avg; 
-      acc.convertTo(avg, CV_32F, 1.0/cluster.size());
+      acc.convertTo(avg, CV_8U, 1.0/cluster.size());
       centroids[k]= avg;
     }
-
   }
+  //stack k centroids into one multidimensional cv::Mat  
+  cv::Mat out;
+  cv::merge(centroids, out);
+  return out;
 }
 
 } // namespace igg

@@ -54,18 +54,38 @@ CMAKE_BINARY_DIR = /home/bruno/Learning/ModernCppCV/BoW/build
 
 # The main recursive "all" target.
 all: CMakeFiles/kmeans.dir/all
+all: tests/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: tests/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/kmeans.dir/clean
+clean: tests/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory tests
+
+# Recursive "all" directory target.
+tests/all: tests/CMakeFiles/test_kmeans.dir/all
+
+.PHONY : tests/all
+
+# Recursive "preinstall" directory target.
+tests/preinstall:
+
+.PHONY : tests/preinstall
+
+# Recursive "clean" directory target.
+tests/clean: tests/CMakeFiles/test_kmeans.dir/clean
+
+.PHONY : tests/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/kmeans.dir
@@ -93,6 +113,33 @@ kmeans: CMakeFiles/kmeans.dir/rule
 CMakeFiles/kmeans.dir/clean:
 	$(MAKE) -f CMakeFiles/kmeans.dir/build.make CMakeFiles/kmeans.dir/clean
 .PHONY : CMakeFiles/kmeans.dir/clean
+
+#=============================================================================
+# Target rules for target tests/CMakeFiles/test_kmeans.dir
+
+# All Build rule for target.
+tests/CMakeFiles/test_kmeans.dir/all: CMakeFiles/kmeans.dir/all
+	$(MAKE) -f tests/CMakeFiles/test_kmeans.dir/build.make tests/CMakeFiles/test_kmeans.dir/depend
+	$(MAKE) -f tests/CMakeFiles/test_kmeans.dir/build.make tests/CMakeFiles/test_kmeans.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles --progress-num=3,4,5 "Built target test_kmeans"
+.PHONY : tests/CMakeFiles/test_kmeans.dir/all
+
+# Build rule for subdir invocation for target.
+tests/CMakeFiles/test_kmeans.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_kmeans.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles 0
+.PHONY : tests/CMakeFiles/test_kmeans.dir/rule
+
+# Convenience name for target.
+test_kmeans: tests/CMakeFiles/test_kmeans.dir/rule
+
+.PHONY : test_kmeans
+
+# clean rule for target.
+tests/CMakeFiles/test_kmeans.dir/clean:
+	$(MAKE) -f tests/CMakeFiles/test_kmeans.dir/build.make tests/CMakeFiles/test_kmeans.dir/clean
+.PHONY : tests/CMakeFiles/test_kmeans.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

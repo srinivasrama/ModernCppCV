@@ -6,13 +6,11 @@ cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
   // 1. Given cluster centroids i initialized randomly
   std::vector<cv::Mat> centroids;
   centroids.reserve(k);
-  std::set<int> ids;
-  while (ids.size() <= k) {
-    int ind = std::rand() % k;
-    ids.insert(ind);
-  }
-  for (const auto &id_ : ids) {
-    centroids.emplace_back(descriptors[id_]);
+  for (int i=0;i<k;i++) {
+    int ind= rand()% descriptors.size();
+    cv::Mat descriptor_depth;//(descriptors[0].size(), CV_64FC1, cv::Scalar(0.0));
+    descriptors[ind].convertTo(descriptor_depth,CV_64FC1);
+    centroids.emplace_back(descriptor_depth);
   }
   // 2. For iteration t=1..T
   std::map<int, std::vector<cv::Mat>> clusters;
@@ -43,21 +41,53 @@ cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
       clusters[centroid_id].push_back(descriptor);
     }
     //3. Reassign centroids 
-    for (int j = 0; j < k; j++) {
-      auto cluster= clusters[k];  
-      cv::Mat acc(cluster[0].size(), CV_64F, cv::Scalar(0));
-      for(const auto &c: cluster){
+    for (auto const& x : clusters){
+      auto cluster_= x.second;  
+      cv::Mat acc(descriptors[0].size(), CV_64FC1, cv::Scalar(0.0));
+      for(const auto &c: cluster_){
           cv::accumulate(c,acc);
       }
-      cv::Mat avg; 
-      acc.convertTo(avg, CV_8U, 1.0/cluster.size());
-      centroids[k]= avg;
+      cv::Mat avg(centroids[0].size() ,CV_64FC1); 
+      acc.convertTo(avg, CV_64FC1, 1.0/cluster_.size()*1.0);
+      centroids[x.first]= avg;
     }
   }
   //stack k centroids into one multidimensional cv::Mat  
-  cv::Mat out;
-  cv::merge(centroids, out);
+  cv::Mat out(0,descriptors[0].size().width, CV_64FC1);
+  for(const auto &centroid: centroids){
+  cv::vconcat(out, centroid, out);
+  }
   return out;
 }
 
-} // namespace igg
+}; // namespace igg
+// cv::Mat GetAllFeatures() {
+//   // init some parameters
+//   const int rows_num = 1;
+//   const int cols_num = 10;
+//   cv::Mat data;
+
+//   for (int i = 0; i < 100; i += 20) {
+//     for (size_t j = 0; j < 5; j++) {
+//       data.push_back(cv::Mat_<float>(rows_num, cols_num, i));
+//     }
+//   }
+
+//   return data;
+// }
+
+// int main(){
+//   const int rows_num = 1;
+//   const int cols_num = 10;
+//   static std::vector<cv::Mat> data;
+
+//   for (int i = 0; i < 100; i += 20) {
+//     for (size_t j = 0; j < 5; j++) {
+//       data.push_back(cv::Mat_<float>(rows_num, cols_num, i));
+//     }
+//   }
+//   const int iterations = 10;
+//   auto gt= GetAllFeatures();
+//   auto centroids = ipb::kMeans(data, gt.rows, iterations);
+//   return 0;
+// }

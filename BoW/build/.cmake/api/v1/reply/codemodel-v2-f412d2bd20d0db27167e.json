@@ -6,10 +6,6 @@
 			[
 				{
 					"build" : ".",
-					"childIndexes" : 
-					[
-						1
-					],
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.8"
@@ -20,20 +16,6 @@
 					[
 						0
 					]
-				},
-				{
-					"build" : "tests",
-					"minimumCMakeVersion" : 
-					{
-						"string" : "3.8"
-					},
-					"parentIndex" : 0,
-					"projectIndex" : 0,
-					"source" : "tests",
-					"targetIndexes" : 
-					[
-						1
-					]
 				}
 			],
 			"name" : "Debug",
@@ -42,14 +24,12 @@
 				{
 					"directoryIndexes" : 
 					[
-						0,
-						1
+						0
 					],
 					"name" : "code_book",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -58,15 +38,8 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "kmeans::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-kmeans-Debug-f3ee78177e5c94ab8f2e.json",
+					"jsonFile" : "target-kmeans-Debug-f1102ede7a244169994f.json",
 					"name" : "kmeans",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 1,
-					"id" : "test_kmeans::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-test_kmeans-Debug-101972490246ed05e1a3.json",
-					"name" : "test_kmeans",
 					"projectIndex" : 0
 				}
 			]

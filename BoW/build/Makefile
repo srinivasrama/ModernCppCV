@@ -78,17 +78,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles /home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles/progress.marks
@@ -134,19 +123,6 @@ kmeans/fast:
 	$(MAKE) -f CMakeFiles/kmeans.dir/build.make CMakeFiles/kmeans.dir/build
 .PHONY : kmeans/fast
 
-#=============================================================================
-# Target rules for targets named test_kmeans
-
-# Build rule for target.
-test_kmeans: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_kmeans
-.PHONY : test_kmeans
-
-# fast build rule for target.
-test_kmeans/fast:
-	$(MAKE) -f tests/CMakeFiles/test_kmeans.dir/build.make tests/CMakeFiles/test_kmeans.dir/build
-.PHONY : test_kmeans/fast
-
 src/codebook.o: src/codebook.cpp.o
 
 .PHONY : src/codebook.o
@@ -182,9 +158,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... kmeans"
-	@echo "... test_kmeans"
 	@echo "... src/codebook.o"
 	@echo "... src/codebook.i"
 	@echo "... src/codebook.s"

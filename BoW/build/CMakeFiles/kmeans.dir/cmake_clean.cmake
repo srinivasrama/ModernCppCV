@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/kmeans.dir/src/codebook.cpp.o"
-  "libkmeans.a"
-  "libkmeans.pdb"
+  "kmeans"
+  "kmeans.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -32,7 +32,7 @@ std::vector<cv::Mat> centroids;
   return centroids;
 }
 
-std::map<int, std::vector<cv::Mat>> assignToClusters(const std::vector<cv::Mat> &descriptors,const std::vector<cv::Mat> &centroids,int k, std::map<int, std::vector<cv::Mat>> &clusters ){
+void assignToClusters(const std::vector<cv::Mat> &descriptors,const std::vector<cv::Mat> &centroids,int k, std::map<int, std::vector<cv::Mat>> &clusters ){
   for (const auto &descriptor : descriptors) {
       cv::Mat descriptor_depth;
       descriptor.convertTo(descriptor_depth, CV_64FC1);
@@ -52,10 +52,9 @@ std::map<int, std::vector<cv::Mat>> assignToClusters(const std::vector<cv::Mat> 
       // 2. Assign each point to the centroid it is closest to
       clusters[centroid_id].push_back(descriptor_depth);
     }
-  return clusters;
 }
 
-void recomputeCenters(std::vector<cv::Mat> &centroids, std::map<int, std::vector<cv::Mat>> clusters){
+void recomputeCenters(std::vector<cv::Mat> &centroids, const std::map<int, std::vector<cv::Mat>> &clusters){
     // 3. Reassign centroids
     for (auto const &x : clusters) {
       auto cluster_ = x.second;
@@ -78,7 +77,7 @@ cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
   std::map<int, std::vector<cv::Mat>> clusters;
   for (int i = 0; i < max_iter; i++) {
     //2.1 assign clusters
-      std::map<int, std::vector<cv::Mat>> clusters=  assignToClusters(descriptors,centroids, k, clusters );
+    assignToClusters(descriptors,centroids, k, clusters );
     // 3. Reassign centroids
     recomputeCenters(centroids,  clusters);
   }

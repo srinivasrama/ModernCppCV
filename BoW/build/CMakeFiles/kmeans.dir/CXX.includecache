@@ -23,6 +23,8 @@ functional
 -
 numeric
 -
+random
+-
 
 /home/bruno/Learning/ModernCppCV/BoW/src/codebook.cpp
 codebook.h

@@ -117,10 +117,13 @@ int main(){
   }
   const int iterations = 10;
   auto gt= Get5Kmeans();
-  auto centroids = ipb::kMeans(data, gt.rows, iterations);
-    cv::sort(centroids, centroids, cv::SORT_EVERY_COLUMN + cv::SORT_ASCENDING);
-  std::cout << "M = " << std::endl << " "  << centroids << std::endl << std::endl;
-  std::cout << "GT = " << std::endl << " "  << gt << std::endl << std::endl;
+  // auto centroids = ipb::kMeans(data, gt.rows, iterations);
+  auto centroids= ipb::getInitialClusterCenters(data,gt.rows);
+    // cv::sort(centroids, centroids, cv::SORT_EVERY_COLUMN + cv::SORT_ASCENDING);
+  for(const auto &centroid: centroids){
+    std::cout << "M = " << std::endl << " "  << centroid << std::endl << std::endl;
+  }
+  // std::cout << "GT = " << std::endl << " "  << gt << std::endl << std::endl;
   std::cout << "end" <<std::endl;
   return 0;
 }

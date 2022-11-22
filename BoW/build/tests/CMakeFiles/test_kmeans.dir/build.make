@@ -151,6 +151,7 @@ tests/test_kmeans: /usr/local/lib/libopencv_xphoto.so.4.6.0
 tests/test_kmeans: /usr/local/lib/libopencv_photo.so.4.6.0
 tests/test_kmeans: /usr/local/lib/libopencv_imgproc.so.4.6.0
 tests/test_kmeans: /usr/local/lib/libopencv_core.so.4.6.0
+tests/test_kmeans: libserialization.a
 tests/test_kmeans: /usr/local/lib/libgtest.a
 tests/test_kmeans: tests/CMakeFiles/test_kmeans.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test_kmeans"

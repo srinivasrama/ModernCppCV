@@ -19,9 +19,11 @@ include_directories(${DIVISIBLE_INSTALL_INCLUDE_DIR})
 include_directories(${DIVISION_SOURCE_DIR})
 
 add_executable(kmeans ${DIVISION_SOURCE_DIR}/codebook.cpp)
+target_link_libraries(kmeans ${OpenCV_LIBRARIES})
 
 # add serialize library
 # add_library(kmeans  src/codebook.cpp)
-target_link_libraries(kmeans ${OpenCV_LIBRARIES})
+# add_library(serialization  src/convert_dataset.cpp src/serialize.cpp)
+# target_link_libraries(kmeans ${OpenCV_LIBRARIES} serialization)
 # enable_testing ()
 # add_subdirectory (tests)

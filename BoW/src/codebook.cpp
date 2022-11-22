@@ -10,24 +10,19 @@ std::vector<cv::Mat> centroids;
   centroids.emplace_back(descriptor_depth);
 
   while(centroids.size()<k){
-    auto last_centroid= centroids.back();
-    cv::Mat last_cent;
-    last_centroid.convertTo(last_cent, CV_64FC1);
-    
-    float distance_max= std::numeric_limits<float>::min();
-    cv::Mat choose_one;
-    float distance=0.;
-    for(int i=0;i<descriptors.size();++i){
-        cv::Mat descriptor_depth;
-        descriptors[i].convertTo(descriptor_depth, CV_64FC1);
-        distance+= cv::norm(descriptor_depth, last_cent, cv::NORM_L2SQR);
-        if(distance-distance_max>0) {
-          distance_max= distance;
-          choose_one= descriptor_depth;
-
+    std::vector<double> distances;
+    for (const auto &descriptor: descriptors){
+        double distance_min= std::numeric_limits<float>::max();
+        for(const auto &centroid: centroids){
+            cv::Mat descriptor_depth_;
+            descriptor.convertTo(descriptor_depth_, CV_64FC1);
+            cv::Mat centroid_;
+            centroid.convertTo(centroid_, CV_64FC1);
+            distance_min= std::min(distance_min,cv::norm(descriptor_depth_, centroid_, cv::NORM_L2SQR));
         }
+        distances.emplace_back(distance_min);
     }
-    centroids.emplace_back(choose_one);
+    centroids.emplace_back(descriptors[std::distance(distances.begin(), std::max_element(distances.begin(), distances.begin() + distances.size()))]);  
   }
   return centroids;
 }
@@ -119,7 +114,7 @@ int main(){
   auto gt= Get5Kmeans();
   // auto centroids = ipb::kMeans(data, gt.rows, iterations);
   auto centroids= ipb::getInitialClusterCenters(data,gt.rows);
-    // cv::sort(centroids, centroids, cv::SORT_EVERY_COLUMN + cv::SORT_ASCENDING);
+  // cv::sort(centroids, centroids, cv::SORT_EVERY_COLUMN + cv::SORT_ASCENDING);
   for(const auto &centroid: centroids){
     std::cout << "M = " << std::endl << " "  << centroid << std::endl << std::endl;
   }

@@ -25,6 +25,8 @@ numeric
 -
 random
 -
+algorithm
+-
 
 /home/bruno/Learning/ModernCppCV/BoW/src/codebook.cpp
 codebook.h

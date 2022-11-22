@@ -108,7 +108,9 @@ tests/CMakeFiles/test_kmeans.dir/test_data.cpp.o: /usr/local/include/opencv4/ope
 tests/CMakeFiles/test_kmeans.dir/test_data.cpp.o: /usr/local/include/opencv4/opencv2/videoio.hpp
 
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: ../include/codebook.h
+tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: ../include/convert_dataset.hpp
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: ../include/homework_7.h
+tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: ../include/serialize.hpp
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: ../tests/test_data.hpp
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: ../tests/test_kmeans.cpp
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: ../tests/test_utils.hpp
@@ -188,8 +190,10 @@ tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/o
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/flann/saving.h
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/flann/timer.h
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/highgui.hpp
+tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/highgui/highgui.hpp
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/imgcodecs.hpp
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/imgproc.hpp
+tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/ml.hpp
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/ml/ml.inl.hpp
@@ -215,4 +219,6 @@ tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/o
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/video/background_segm.hpp
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/video/tracking.hpp
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/videoio.hpp
+tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/xfeatures2d.hpp
+tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o: /usr/local/include/opencv4/opencv2/xfeatures2d/nonfree.hpp
 

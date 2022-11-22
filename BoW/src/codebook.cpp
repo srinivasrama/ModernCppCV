@@ -1,16 +1,14 @@
 #include "codebook.h"
 
 namespace ipb {
-
-cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
-  // 1. Given cluster centroids i initialized randomly
-  std::vector<cv::Mat> centroids;
+std::vector<cv::Mat> getInitialClusterCenters(const std::vector<cv::Mat> &descriptors, int k){
+std::vector<cv::Mat> centroids;
   centroids.reserve(k);
   int ind = rand() % descriptors.size();
   cv::Mat descriptor_depth;
   descriptors[ind].convertTo(descriptor_depth, CV_64FC1);
   centroids.emplace_back(descriptor_depth);
-  
+
   while(centroids.size()<k){
     auto last_centroid= centroids.back();
     cv::Mat last_cent;
@@ -26,18 +24,17 @@ cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
         if(distance-distance_max>0) {
           distance_max= distance;
           choose_one= descriptor_depth;
+
         }
     }
     centroids.emplace_back(choose_one);
-
   }
- 
-  // 2. For iteration t=1..T
-  std::map<int, std::vector<cv::Mat>> clusters;
-  for (int i = 0; i < max_iter; i++) {
-    for (const auto &descriptor : descriptors) {
-      cv::Mat
-        descriptor_depth;
+  return centroids;
+}
+
+std::map<int, std::vector<cv::Mat>> assignToClusters(const std::vector<cv::Mat> &descriptors,const std::vector<cv::Mat> &centroids,int k, std::map<int, std::vector<cv::Mat>> &clusters ){
+  for (const auto &descriptor : descriptors) {
+      cv::Mat descriptor_depth;
       descriptor.convertTo(descriptor_depth, CV_64FC1);
 
       float distance_min= cv::norm(descriptor_depth, centroids[0], cv::NORM_L2SQR); 
@@ -55,20 +52,38 @@ cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
       // 2. Assign each point to the centroid it is closest to
       clusters[centroid_id].push_back(descriptor_depth);
     }
+  return clusters;
+}
+
+void recomputeCenters(std::vector<cv::Mat> &centroids, std::map<int, std::vector<cv::Mat>> clusters){
     // 3. Reassign centroids
     for (auto const &x : clusters) {
       auto cluster_ = x.second;
-      cv::Mat acc(descriptors[0].size(), CV_64FC1, cv::Scalar(0.0));
+      cv::Mat acc(centroids[0].size(), CV_64FC1, cv::Scalar(0.0));
       for (const auto &c : cluster_) {
         cv::accumulate(c, acc);
       }
-      cv::Mat avg(descriptors[0].size(), CV_64FC1);
+
+      cv::Mat avg(centroids[0].size(), CV_64FC1);
       acc.convertTo(avg, CV_64FC1);
+
       centroids[x.first] = acc/cluster_.size()*1.;
+
     }
+}
+cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
+  // 1. Given cluster centroids i initialized randomly
+  auto centroids= getInitialClusterCenters(descriptors,k);
+  // 2. For iteration t=1..T
+  std::map<int, std::vector<cv::Mat>> clusters;
+  for (int i = 0; i < max_iter; i++) {
+    //2.1 assign clusters
+      std::map<int, std::vector<cv::Mat>> clusters=  assignToClusters(descriptors,centroids, k, clusters );
+    // 3. Reassign centroids
+    recomputeCenters(centroids,  clusters);
   }
   // stack k centroids into one multidimensional cv::Mat
-  cv::Mat out(0, descriptors[0].size().width, CV_64FC1);
+  cv::Mat out(0, centroids[0].size().width, CV_64FC1);
   for (const auto &centroid : centroids) {
     cv::vconcat(out, centroid, out);
   }

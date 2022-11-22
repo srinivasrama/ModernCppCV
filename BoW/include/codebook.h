@@ -25,6 +25,12 @@ namespace ipb {
 cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k,
                int max_iter);
 
+
+std::vector<cv::Mat> getInitialClusterCenters(const std::vector<cv::Mat> &descriptors, int k);
+
+std::map<int, std::vector<cv::Mat>> assignToClusters(const std::vector<cv::Mat> &descriptors,const std::vector<cv::Mat> &centroids, int k, std::map<int, std::vector<cv::Mat>> &clusters);
+
+void recomputeCenters(std::vector<cv::Mat> &centroids, std::map<int, std::vector<cv::Mat>> clusters);
 // class BowDictionary {
 // private:
 //   // constructor and destructor

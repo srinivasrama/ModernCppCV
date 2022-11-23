@@ -6,6 +6,7 @@
 
 #include <filesystem>
 #include <vector>
+#include <experimental/filesystem>
 
 #include <opencv2/core/mat.hpp>
 
@@ -22,9 +23,9 @@ auto& dictionary = ipb::BowDictionary::GetInstance();
 }  // namespace
 
 TEST(BowDictionary, Serialization) {
-  namespace fs = std::filesystem;
-  const std::string img_path = "data/freiburg/images/";
-  const std::string bin_path = "data/freiburg/bin/";
+  namespace fs = std::experimental::filesystem;
+  const std::string img_path = "../../tests/data/freiburg/images";
+  const std::string bin_path = "../../tests/data/freiburg/bin/";
   ipb::serialization::sifts::ConvertDataset(img_path);
 
   for (const auto& entry : fs::directory_iterator(img_path)) {
@@ -38,7 +39,7 @@ TEST(BowDictionary, Serialization) {
 }
 
 TEST(BowDictionary, SetDictionaryParams) {
-  const auto descriptors = LoadDataset("data/freiburg/bin/");
+  const auto descriptors = LoadDataset("../../tests/data/freiburg/bin");
   dictionary.set_params(max_iter, dict_size, descriptors);
   ASSERT_TRUE(!dictionary.empty());
   ASSERT_EQ(dictionary.size(), dict_size);
@@ -46,7 +47,7 @@ TEST(BowDictionary, SetDictionaryParams) {
 
 // Cluster and dataset are identical
 TEST(BowDictionary, TransparentCluster) {
-  const auto descriptors = LoadDataset("data/freiburg/bin/");
+  const auto descriptors = LoadDataset("../../tests/data/freiburg/bin");
   int total_features = 0;
   for (const auto& descriptor : descriptors) {
     total_features += descriptor.rows;
@@ -57,7 +58,7 @@ TEST(BowDictionary, TransparentCluster) {
 }
 
 TEST(BowDictionary, ChangeSizeDictionary) {
-  const auto descriptors = LoadDataset("data/freiburg/bin/");
+  const auto descriptors = LoadDataset("../../tests/data/freiburg/bin");
   dictionary.set_params(max_iter, dict_size, descriptors);
   const int kNewSize = 100;
   dictionary.set_size(kNewSize);
@@ -66,7 +67,7 @@ TEST(BowDictionary, ChangeSizeDictionary) {
 }
 
 TEST(BowDictionary, ChangeMaxIterations) {
-  const auto descriptors = LoadDataset("data/freiburg/bin/");
+  const auto descriptors = LoadDataset("../../tests/data/freiburg/bin");
   dictionary.set_params(max_iter, dict_size, descriptors);
   const int kNewIterations = 100;
   dictionary.set_max_iterations(kNewIterations);
@@ -76,7 +77,7 @@ TEST(BowDictionary, ChangeMaxIterations) {
 }
 
 TEST(BowDictionary, ChangeInputDescriptors) {
-  const auto descriptors = LoadDataset("data/freiburg/bin/");
+  const auto descriptors = LoadDataset("../../tests/data/freiburg/bin");
   dictionary.set_params(max_iter, dict_size, descriptors);
 
   // copy the first half of the descriptors

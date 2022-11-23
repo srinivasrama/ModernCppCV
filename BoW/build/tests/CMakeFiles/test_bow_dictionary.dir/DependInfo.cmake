@@ -10,13 +10,15 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/local/include/opencv4"
   "../include"
   "../src"
+  "/usr/local/include/opencv4"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles/bow_dictionary.dir/DependInfo.cmake"
+  "/home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles/serialization.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

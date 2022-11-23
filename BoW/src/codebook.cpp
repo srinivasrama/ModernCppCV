@@ -90,80 +90,78 @@ cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
 }
 
 }; // namespace ipb
-cv::Mat Get3Kmeans() {
-  // init some parameters
-  const int rows_num = 1;
-  const int cols_num = 10;
-  cv::Mat data;
+// cv::Mat Get3Kmeans() {
+//   // init some parameters
+//   const int rows_num = 1;
+//   const int cols_num = 10;
+//   cv::Mat data;
 
-  data.push_back(cv::Mat_<float>(rows_num, cols_num, 0.0F));
-  data.push_back(cv::Mat_<float>(rows_num, cols_num, 30.0F));
-  data.push_back(cv::Mat_<float>(rows_num, cols_num, 70.0F));
+//   data.push_back(cv::Mat_<float>(rows_num, cols_num, 0.0F));
+//   data.push_back(cv::Mat_<float>(rows_num, cols_num, 30.0F));
+//   data.push_back(cv::Mat_<float>(rows_num, cols_num, 70.0F));
 
-  return data;
-}
+//   return data;
+// }
 
-cv::Mat Get2Kmeans() {
-  // init some parameters
-  const int rows_num = 1;
-  const int cols_num = 10;
-  cv::Mat data;
+// cv::Mat Get2Kmeans() {
+//   // init some parameters
+//   const int rows_num = 1;
+//   const int cols_num = 10;
+//   cv::Mat data;
 
-  data.push_back(cv::Mat_<float>(rows_num, cols_num, 20.000002F));
-  data.push_back(cv::Mat_<float>(rows_num, cols_num, 70.0F));
+//   data.push_back(cv::Mat_<float>(rows_num, cols_num, 20.000002F));
+//   data.push_back(cv::Mat_<float>(rows_num, cols_num, 70.0F));
 
-  return data;
-}
+//   return data;
+// }
 
-cv::Mat Get5Kmeans() {
-  // init some parameters
-  const int rows_num = 1;
-  const int cols_num = 10;
-  cv::Mat data;
+// cv::Mat Get5Kmeans() {
+//   // init some parameters
+//   const int rows_num = 1;
+//   const int cols_num = 10;
+//   cv::Mat data;
 
-  for (int i = 0; i < 100; i += 20) {
-    cv::Mat_<float> vec(rows_num, cols_num, i);
-    data.push_back(vec);
-  }
+//   for (int i = 0; i < 100; i += 20) {
+//     cv::Mat_<float> vec(rows_num, cols_num, i);
+//     data.push_back(vec);
+//   }
 
-  return data;
-}
-cv::Mat Get18Kmeans() {
-  // init some parameters
-  const int rows_num = 1;
-  const int cols_num = 10;
-  cv::Mat data;
+//   return data;
+// }
+// cv::Mat Get18Kmeans() {
+//   // init some parameters
+//   const int rows_num = 1;
+//   const int cols_num = 10;
+//   cv::Mat data;
 
-  for (int i = 0; i < 100; i += 20) {
-    for (size_t j = 0; j < 3; j++) {
-      data.push_back(cv::Mat_<float>(rows_num, cols_num, i));
-    }
-  }
+//   for (int i = 0; i < 100; i += 20) {
+//     for (size_t j = 0; j < 3; j++) {
+//       data.push_back(cv::Mat_<float>(rows_num, cols_num, i));
+//     }
+//   }
 
-  return data;
-}
-int main(){
-  const int rows_num = 1;
-  const int cols_num = 10;
-  static std::vector<cv::Mat> data;
+//   return data;
+// }
+// int main(){
+//   const int rows_num = 1;
+//   const int cols_num = 10;
+//   static std::vector<cv::Mat> data;
 
-  for (int i = 0; i < 100; i += 20) {
-    for (size_t j = 0; j < 5; j++) {
-      data.push_back(cv::Mat_<float>(rows_num, cols_num, i));
-      std::cout<<"DATA="<< cv::Mat_<float>(rows_num, cols_num, i) <<std::endl;
-    }
-  }
-  const int iterations = 10;
-  auto gt= Get18Kmeans();
-  auto centroids = ipb::kMeans(data, gt.rows, iterations);
-  auto centroids_= ipb::getInitialClusterCenters(data,gt.rows);
-  cv::sort(centroids, centroids, cv::SORT_EVERY_COLUMN + cv::SORT_ASCENDING);
-  // for(const auto &centroid: centroids_){
-  //   std::cout << "INIT_C = " << std::endl << " "  << centroid << std::endl << std::endl;
-  // }
-
-  std::cout << "GT = " << std::endl << " "  << gt << std::endl << std::endl;
-  std::cout << "MT = " << std::endl << " "  << centroids << std::endl << std::endl;
-  std::cout << "end" <<std::endl;
-  return 0;
-}
+//   for (int i = 0; i < 100; i += 20) {
+//     for (size_t j = 0; j < 5; j++) {
+//       data.push_back(cv::Mat_<float>(rows_num, cols_num, i));
+//     }
+//   }
+//   const int iterations = 10;
+//   auto gt= Get18Kmeans();
+//   auto centroids = ipb::kMeans(data, gt.rows, iterations);
+//   // auto centroids= ipb::getInitialClusterCenters(data,gt.rows);
+//   cv::sort(centroids, centroids, cv::SORT_EVERY_COLUMN + cv::SORT_ASCENDING);
+//   // for(const auto &centroid: centroids){
+//   //   std::cout << "M = " << std::endl << " "  << centroid << std::endl << std::endl;
+//   // }
+//   std::cout << "GT = " << std::endl << " "  << gt << std::endl << std::endl;
+//   std::cout << "MT = " << std::endl << " "  << centroids << std::endl << std::endl;
+//   std::cout << "end" <<std::endl;
+//   return 0;
+// }

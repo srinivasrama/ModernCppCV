@@ -95,7 +95,6 @@ tests/test_kmeans: tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o
 tests/test_kmeans: tests/CMakeFiles/test_kmeans.dir/test_data.cpp.o
 tests/test_kmeans: tests/CMakeFiles/test_kmeans.dir/build.make
 tests/test_kmeans: libkmeans.a
-tests/test_kmeans: /usr/local/lib/libgtest_main.a
 tests/test_kmeans: /usr/local/lib/libopencv_gapi.so.4.6.0
 tests/test_kmeans: /usr/local/lib/libopencv_stitching.so.4.6.0
 tests/test_kmeans: /usr/local/lib/libopencv_alphamat.so.4.6.0
@@ -151,6 +150,8 @@ tests/test_kmeans: /usr/local/lib/libopencv_xphoto.so.4.6.0
 tests/test_kmeans: /usr/local/lib/libopencv_photo.so.4.6.0
 tests/test_kmeans: /usr/local/lib/libopencv_imgproc.so.4.6.0
 tests/test_kmeans: /usr/local/lib/libopencv_core.so.4.6.0
+tests/test_kmeans: libserialization.a
+tests/test_kmeans: /usr/local/lib/libgtest_main.a
 tests/test_kmeans: /usr/local/lib/libgtest.a
 tests/test_kmeans: tests/CMakeFiles/test_kmeans.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test_kmeans"

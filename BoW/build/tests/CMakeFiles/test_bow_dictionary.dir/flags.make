@@ -6,5 +6,5 @@ CXX_FLAGS = -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/include/opencv4 -I/home/bruno/Learning/ModernCppCV/BoW/include -I/home/bruno/Learning/ModernCppCV/BoW/src 
+CXX_INCLUDES = -I/home/bruno/Learning/ModernCppCV/BoW/include -I/home/bruno/Learning/ModernCppCV/BoW/src -isystem /usr/local/include/opencv4 
 

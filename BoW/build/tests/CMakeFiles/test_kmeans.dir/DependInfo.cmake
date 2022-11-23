@@ -19,7 +19,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles/kmeans.dir/DependInfo.cmake"
-  "/home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles/serialization.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

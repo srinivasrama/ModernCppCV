@@ -78,17 +78,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles /home/bruno/Learning/ModernCppCV/BoW/build/CMakeFiles/progress.marks
@@ -122,32 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named bow_dictionary
-
-# Build rule for target.
-bow_dictionary: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bow_dictionary
-.PHONY : bow_dictionary
-
-# fast build rule for target.
-bow_dictionary/fast:
-	$(MAKE) -f CMakeFiles/bow_dictionary.dir/build.make CMakeFiles/bow_dictionary.dir/build
-.PHONY : bow_dictionary/fast
-
-#=============================================================================
-# Target rules for targets named serialization
-
-# Build rule for target.
-serialization: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 serialization
-.PHONY : serialization
-
-# fast build rule for target.
-serialization/fast:
-	$(MAKE) -f CMakeFiles/serialization.dir/build.make CMakeFiles/serialization.dir/build
-.PHONY : serialization/fast
-
-#=============================================================================
 # Target rules for targets named kmeans
 
 # Build rule for target.
@@ -159,46 +122,6 @@ kmeans: cmake_check_build_system
 kmeans/fast:
 	$(MAKE) -f CMakeFiles/kmeans.dir/build.make CMakeFiles/kmeans.dir/build
 .PHONY : kmeans/fast
-
-#=============================================================================
-# Target rules for targets named test_bow_dictionary
-
-# Build rule for target.
-test_bow_dictionary: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_bow_dictionary
-.PHONY : test_bow_dictionary
-
-# fast build rule for target.
-test_bow_dictionary/fast:
-	$(MAKE) -f tests/CMakeFiles/test_bow_dictionary.dir/build.make tests/CMakeFiles/test_bow_dictionary.dir/build
-.PHONY : test_bow_dictionary/fast
-
-src/bow_dictionary.o: src/bow_dictionary.cpp.o
-
-.PHONY : src/bow_dictionary.o
-
-# target to build an object file
-src/bow_dictionary.cpp.o:
-	$(MAKE) -f CMakeFiles/bow_dictionary.dir/build.make CMakeFiles/bow_dictionary.dir/src/bow_dictionary.cpp.o
-.PHONY : src/bow_dictionary.cpp.o
-
-src/bow_dictionary.i: src/bow_dictionary.cpp.i
-
-.PHONY : src/bow_dictionary.i
-
-# target to preprocess a source file
-src/bow_dictionary.cpp.i:
-	$(MAKE) -f CMakeFiles/bow_dictionary.dir/build.make CMakeFiles/bow_dictionary.dir/src/bow_dictionary.cpp.i
-.PHONY : src/bow_dictionary.cpp.i
-
-src/bow_dictionary.s: src/bow_dictionary.cpp.s
-
-.PHONY : src/bow_dictionary.s
-
-# target to generate assembly for a file
-src/bow_dictionary.cpp.s:
-	$(MAKE) -f CMakeFiles/bow_dictionary.dir/build.make CMakeFiles/bow_dictionary.dir/src/bow_dictionary.cpp.s
-.PHONY : src/bow_dictionary.cpp.s
 
 src/codebook.o: src/codebook.cpp.o
 
@@ -227,60 +150,6 @@ src/codebook.cpp.s:
 	$(MAKE) -f CMakeFiles/kmeans.dir/build.make CMakeFiles/kmeans.dir/src/codebook.cpp.s
 .PHONY : src/codebook.cpp.s
 
-src/convert_dataset.o: src/convert_dataset.cpp.o
-
-.PHONY : src/convert_dataset.o
-
-# target to build an object file
-src/convert_dataset.cpp.o:
-	$(MAKE) -f CMakeFiles/serialization.dir/build.make CMakeFiles/serialization.dir/src/convert_dataset.cpp.o
-.PHONY : src/convert_dataset.cpp.o
-
-src/convert_dataset.i: src/convert_dataset.cpp.i
-
-.PHONY : src/convert_dataset.i
-
-# target to preprocess a source file
-src/convert_dataset.cpp.i:
-	$(MAKE) -f CMakeFiles/serialization.dir/build.make CMakeFiles/serialization.dir/src/convert_dataset.cpp.i
-.PHONY : src/convert_dataset.cpp.i
-
-src/convert_dataset.s: src/convert_dataset.cpp.s
-
-.PHONY : src/convert_dataset.s
-
-# target to generate assembly for a file
-src/convert_dataset.cpp.s:
-	$(MAKE) -f CMakeFiles/serialization.dir/build.make CMakeFiles/serialization.dir/src/convert_dataset.cpp.s
-.PHONY : src/convert_dataset.cpp.s
-
-src/serialize.o: src/serialize.cpp.o
-
-.PHONY : src/serialize.o
-
-# target to build an object file
-src/serialize.cpp.o:
-	$(MAKE) -f CMakeFiles/serialization.dir/build.make CMakeFiles/serialization.dir/src/serialize.cpp.o
-.PHONY : src/serialize.cpp.o
-
-src/serialize.i: src/serialize.cpp.i
-
-.PHONY : src/serialize.i
-
-# target to preprocess a source file
-src/serialize.cpp.i:
-	$(MAKE) -f CMakeFiles/serialization.dir/build.make CMakeFiles/serialization.dir/src/serialize.cpp.i
-.PHONY : src/serialize.cpp.i
-
-src/serialize.s: src/serialize.cpp.s
-
-.PHONY : src/serialize.s
-
-# target to generate assembly for a file
-src/serialize.cpp.s:
-	$(MAKE) -f CMakeFiles/serialization.dir/build.make CMakeFiles/serialization.dir/src/serialize.cpp.s
-.PHONY : src/serialize.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -289,23 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... bow_dictionary"
-	@echo "... serialization"
 	@echo "... kmeans"
-	@echo "... test_bow_dictionary"
-	@echo "... src/bow_dictionary.o"
-	@echo "... src/bow_dictionary.i"
-	@echo "... src/bow_dictionary.s"
 	@echo "... src/codebook.o"
 	@echo "... src/codebook.i"
 	@echo "... src/codebook.s"
-	@echo "... src/convert_dataset.o"
-	@echo "... src/convert_dataset.i"
-	@echo "... src/convert_dataset.s"
-	@echo "... src/serialize.o"
-	@echo "... src/serialize.i"
-	@echo "... src/serialize.s"
 .PHONY : help
 
 

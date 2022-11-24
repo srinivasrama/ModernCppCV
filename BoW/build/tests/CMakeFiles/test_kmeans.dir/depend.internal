@@ -108,6 +108,7 @@ tests/CMakeFiles/test_kmeans.dir/test_data.cpp.o
  /usr/local/include/opencv4/opencv2/video/tracking.hpp
  /usr/local/include/opencv4/opencv2/videoio.hpp
 tests/CMakeFiles/test_kmeans.dir/test_kmeans.cpp.o
+ ../include/bow_dictionary.h
  ../include/codebook.h
  ../include/convert_dataset.hpp
  ../include/homework_7.h

@@ -1,27 +1,7 @@
 [
 {
   "directory": "/home/bruno/Learning/ModernCppCV/BoW/build",
-  "command": "/usr/bin/c++   -I/usr/local/include/opencv4 -I/home/bruno/Learning/ModernCppCV/BoW/include -I/home/bruno/Learning/ModernCppCV/BoW/src  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/bow_dictionary.dir/src/bow_dictionary.cpp.o -c /home/bruno/Learning/ModernCppCV/BoW/src/bow_dictionary.cpp",
-  "file": "/home/bruno/Learning/ModernCppCV/BoW/src/bow_dictionary.cpp"
-},
-{
-  "directory": "/home/bruno/Learning/ModernCppCV/BoW/build",
-  "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/BoW/include -I/home/bruno/Learning/ModernCppCV/BoW/src -isystem /usr/local/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/serialization.dir/src/convert_dataset.cpp.o -c /home/bruno/Learning/ModernCppCV/BoW/src/convert_dataset.cpp",
-  "file": "/home/bruno/Learning/ModernCppCV/BoW/src/convert_dataset.cpp"
-},
-{
-  "directory": "/home/bruno/Learning/ModernCppCV/BoW/build",
-  "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/BoW/include -I/home/bruno/Learning/ModernCppCV/BoW/src -isystem /usr/local/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/serialization.dir/src/serialize.cpp.o -c /home/bruno/Learning/ModernCppCV/BoW/src/serialize.cpp",
-  "file": "/home/bruno/Learning/ModernCppCV/BoW/src/serialize.cpp"
-},
-{
-  "directory": "/home/bruno/Learning/ModernCppCV/BoW/build",
   "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/BoW/include -I/home/bruno/Learning/ModernCppCV/BoW/src -isystem /usr/local/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/kmeans.dir/src/codebook.cpp.o -c /home/bruno/Learning/ModernCppCV/BoW/src/codebook.cpp",
   "file": "/home/bruno/Learning/ModernCppCV/BoW/src/codebook.cpp"
-},
-{
-  "directory": "/home/bruno/Learning/ModernCppCV/BoW/build/tests",
-  "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/BoW/include -I/home/bruno/Learning/ModernCppCV/BoW/src -isystem /usr/local/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/test_bow_dictionary.dir/test_bow_dictionary.cpp.o -c /home/bruno/Learning/ModernCppCV/BoW/tests/test_bow_dictionary.cpp",
-  "file": "/home/bruno/Learning/ModernCppCV/BoW/tests/test_bow_dictionary.cpp"
 }
 ]

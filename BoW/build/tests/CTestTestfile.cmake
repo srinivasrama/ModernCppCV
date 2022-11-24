@@ -4,4 +4,4 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-include("/home/bruno/Learning/ModernCppCV/BoW/build/tests/test_bow_dictionary[1]_include.cmake")
+include("/home/bruno/Learning/ModernCppCV/BoW/build/tests/test_kmeans[1]_include.cmake")

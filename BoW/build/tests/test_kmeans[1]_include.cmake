@@ -1,5 +1,0 @@
-if(EXISTS "/home/bruno/Learning/ModernCppCV/BoW/build/tests/test_kmeans[1]_tests.cmake")
-  include("/home/bruno/Learning/ModernCppCV/BoW/build/tests/test_kmeans[1]_tests.cmake")
-else()
-  add_test(test_kmeans_NOT_BUILT test_kmeans_NOT_BUILT)
-endif()

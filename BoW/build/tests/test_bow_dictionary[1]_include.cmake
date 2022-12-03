@@ -1,5 +1,0 @@
-if(EXISTS "/home/bruno/Learning/ModernCppCV/BoW/build/tests/test_bow_dictionary[1]_tests.cmake")
-  include("/home/bruno/Learning/ModernCppCV/BoW/build/tests/test_bow_dictionary[1]_tests.cmake")
-else()
-  add_test(test_bow_dictionary_NOT_BUILT test_bow_dictionary_NOT_BUILT)
-endif()

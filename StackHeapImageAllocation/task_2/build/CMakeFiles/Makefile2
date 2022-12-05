@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/tas
 
 # The main recursive "all" target.
 all: CMakeFiles/image.dir/all
+all: CMakeFiles/strategies.dir/all
 all: tests/all
 
 .PHONY : all
@@ -65,6 +66,7 @@ preinstall: tests/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/image.dir/clean
+clean: CMakeFiles/strategies.dir/clean
 clean: tests/clean
 
 .PHONY : clean
@@ -91,7 +93,7 @@ tests/clean: tests/CMakeFiles/image_stack_test.dir/clean
 # Target rules for target CMakeFiles/image.dir
 
 # All Build rule for target.
-CMakeFiles/image.dir/all:
+CMakeFiles/image.dir/all: CMakeFiles/strategies.dir/all
 	$(MAKE) -f CMakeFiles/image.dir/build.make CMakeFiles/image.dir/depend
 	$(MAKE) -f CMakeFiles/image.dir/build.make CMakeFiles/image.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles --progress-num=1,2 "Built target image"
@@ -99,7 +101,7 @@ CMakeFiles/image.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/image.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/image.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles 0
 .PHONY : CMakeFiles/image.dir/rule
@@ -115,10 +117,38 @@ CMakeFiles/image.dir/clean:
 .PHONY : CMakeFiles/image.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/strategies.dir
+
+# All Build rule for target.
+CMakeFiles/strategies.dir/all:
+	$(MAKE) -f CMakeFiles/strategies.dir/build.make CMakeFiles/strategies.dir/depend
+	$(MAKE) -f CMakeFiles/strategies.dir/build.make CMakeFiles/strategies.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles --progress-num=6,7 "Built target strategies"
+.PHONY : CMakeFiles/strategies.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/strategies.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/strategies.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles 0
+.PHONY : CMakeFiles/strategies.dir/rule
+
+# Convenience name for target.
+strategies: CMakeFiles/strategies.dir/rule
+
+.PHONY : strategies
+
+# clean rule for target.
+CMakeFiles/strategies.dir/clean:
+	$(MAKE) -f CMakeFiles/strategies.dir/build.make CMakeFiles/strategies.dir/clean
+.PHONY : CMakeFiles/strategies.dir/clean
+
+#=============================================================================
 # Target rules for target tests/CMakeFiles/image_stack_test.dir
 
 # All Build rule for target.
 tests/CMakeFiles/image_stack_test.dir/all: CMakeFiles/image.dir/all
+tests/CMakeFiles/image_stack_test.dir/all: CMakeFiles/strategies.dir/all
 	$(MAKE) -f tests/CMakeFiles/image_stack_test.dir/build.make tests/CMakeFiles/image_stack_test.dir/depend
 	$(MAKE) -f tests/CMakeFiles/image_stack_test.dir/build.make tests/CMakeFiles/image_stack_test.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles --progress-num=3,4,5 "Built target image_stack_test"
@@ -126,7 +156,7 @@ tests/CMakeFiles/image_stack_test.dir/all: CMakeFiles/image.dir/all
 
 # Build rule for subdir invocation for target.
 tests/CMakeFiles/image_stack_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/image_stack_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles 0
 .PHONY : tests/CMakeFiles/image_stack_test.dir/rule

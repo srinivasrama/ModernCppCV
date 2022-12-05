@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/src/image.cpp" "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles/image.dir/src/image.cpp.o"
+  "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/src/png_strategy.cpp" "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles/strategies.dir/src/png_strategy.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -12,12 +12,10 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
   "../src"
-  "/usr/local/include/opencv4"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles/strategies.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

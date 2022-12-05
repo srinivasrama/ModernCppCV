@@ -135,6 +135,19 @@ image/fast:
 .PHONY : image/fast
 
 #=============================================================================
+# Target rules for targets named strategies
+
+# Build rule for target.
+strategies: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 strategies
+.PHONY : strategies
+
+# fast build rule for target.
+strategies/fast:
+	$(MAKE) -f CMakeFiles/strategies.dir/build.make CMakeFiles/strategies.dir/build
+.PHONY : strategies/fast
+
+#=============================================================================
 # Target rules for targets named image_stack_test
 
 # Build rule for target.
@@ -174,6 +187,33 @@ src/image.cpp.s:
 	$(MAKE) -f CMakeFiles/image.dir/build.make CMakeFiles/image.dir/src/image.cpp.s
 .PHONY : src/image.cpp.s
 
+src/png_strategy.o: src/png_strategy.cpp.o
+
+.PHONY : src/png_strategy.o
+
+# target to build an object file
+src/png_strategy.cpp.o:
+	$(MAKE) -f CMakeFiles/strategies.dir/build.make CMakeFiles/strategies.dir/src/png_strategy.cpp.o
+.PHONY : src/png_strategy.cpp.o
+
+src/png_strategy.i: src/png_strategy.cpp.i
+
+.PHONY : src/png_strategy.i
+
+# target to preprocess a source file
+src/png_strategy.cpp.i:
+	$(MAKE) -f CMakeFiles/strategies.dir/build.make CMakeFiles/strategies.dir/src/png_strategy.cpp.i
+.PHONY : src/png_strategy.cpp.i
+
+src/png_strategy.s: src/png_strategy.cpp.s
+
+.PHONY : src/png_strategy.s
+
+# target to generate assembly for a file
+src/png_strategy.cpp.s:
+	$(MAKE) -f CMakeFiles/strategies.dir/build.make CMakeFiles/strategies.dir/src/png_strategy.cpp.s
+.PHONY : src/png_strategy.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -184,10 +224,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... image"
+	@echo "... strategies"
 	@echo "... image_stack_test"
 	@echo "... src/image.o"
 	@echo "... src/image.i"
 	@echo "... src/image.s"
+	@echo "... src/png_strategy.o"
+	@echo "... src/png_strategy.i"
+	@echo "... src/png_strategy.s"
 .PHONY : help
 
 

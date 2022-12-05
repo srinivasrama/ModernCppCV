@@ -3,8 +3,8 @@
 
 #include <string>
 #include <vector>
-#include "io_strategy.h"
 #include <memory>
+#include "io_strategy.h"
 namespace igg {
 class Image{
 public:

@@ -18,7 +18,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						2
 					]
 				},
 				{
@@ -49,7 +50,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -58,15 +60,22 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "image::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-image-Debug-f136e81ba8339b64ed50.json",
+					"jsonFile" : "target-image-Debug-544d7b669907fcff0956.json",
 					"name" : "image",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "image_stack_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-image_stack_test-Debug-c55e8bb93336698ffb4c.json",
+					"jsonFile" : "target-image_stack_test-Debug-a9a41ea1d109f9ad9b4f.json",
 					"name" : "image_stack_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "strategies::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-strategies-Debug-cbc501857a73d0d0191f.json",
+					"name" : "strategies",
 					"projectIndex" : 0
 				}
 			]

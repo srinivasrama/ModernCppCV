@@ -6,5 +6,5 @@ CXX_FLAGS = -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/include -I/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/src 
+CXX_INCLUDES = -I/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/include -I/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/src -isystem /usr/local/include/opencv4 
 

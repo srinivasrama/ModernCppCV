@@ -13,11 +13,13 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
   "../src"
+  "/usr/local/include/opencv4"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles/image.dir/DependInfo.cmake"
+  "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles/strategies.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

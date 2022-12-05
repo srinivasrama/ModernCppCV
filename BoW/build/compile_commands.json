@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/bruno/Learning/ModernCppCV/BoW/build",
+  "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/BoW/include -I/home/bruno/Learning/ModernCppCV/BoW/src -isystem /usr/local/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/kmeans.dir/src/codebook.cpp.o -c /home/bruno/Learning/ModernCppCV/BoW/src/codebook.cpp",
+  "file": "/home/bruno/Learning/ModernCppCV/BoW/src/codebook.cpp"
+}
+]

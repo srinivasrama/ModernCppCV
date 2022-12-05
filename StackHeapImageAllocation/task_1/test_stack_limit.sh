@@ -12,6 +12,7 @@ stack_limit() {
 }
 
 @test "[task_1] Test Stack Limit" {
+  echo "merda"
   run stack_limit
   # Capture segmentation fault
   [ "$status" -eq 139 ]

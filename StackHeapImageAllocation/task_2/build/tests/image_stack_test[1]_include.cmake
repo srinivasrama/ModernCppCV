@@ -1,0 +1,5 @@
+if(EXISTS "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests/image_stack_test[1]_tests.cmake")
+  include("/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests/image_stack_test[1]_tests.cmake")
+else()
+  add_test(image_stack_test_NOT_BUILT image_stack_test_NOT_BUILT)
+endif()

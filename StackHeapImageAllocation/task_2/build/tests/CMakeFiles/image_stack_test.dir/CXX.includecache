@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/homework_8.h
+image.hpp
+../include/image.hpp
+
+../include/image.hpp
+string
+-
+vector
+-
+io_strategy.h
+../include/io_strategy.h
+memory
+-
+
+../include/io_strategy.h
+
+/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_init.cpp
+gtest/gtest.h
+-
+homework_8.h
+/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/homework_8.h
+
+/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_resize.cpp
+gtest/gtest.h
+-
+homework_8.h
+/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/homework_8.h
+

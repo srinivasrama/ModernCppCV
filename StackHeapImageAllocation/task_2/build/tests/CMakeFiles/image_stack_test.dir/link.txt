@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++17 -pthread -std=c++11 -O3 -g   CMakeFiles/image_stack_test.dir/test_init.cpp.o CMakeFiles/image_stack_test.dir/test_resize.cpp.o  -o image_stack_test  ../libimage.a /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a -lpthread 

@@ -1,0 +1,8 @@
+/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles/rebuild_cache.dir
+/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles/edit_cache.dir
+/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles/test.dir
+/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles/image.dir
+/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests/CMakeFiles/rebuild_cache.dir
+/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests/CMakeFiles/edit_cache.dir
+/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests/CMakeFiles/test.dir
+/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests/CMakeFiles/image_stack_test.dir

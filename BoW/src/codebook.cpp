@@ -55,7 +55,7 @@ void recomputeCenters(std::vector<cv::Mat> &centroids,
   // 3. Reassign centroids
   for (auto const &x : clusters) {
     auto cluster_ = x.second;
-    cv::Mat acc(centroids[0].size(), CV_32FC1, cv::Scalar(0.0));
+    cv::Mat acc(centroids[0].size(), CV_64FC1, cv::Scalar(0.0));
     for (const auto &c : cluster_) {
       cv::accumulate(c, acc);
     }
@@ -68,7 +68,7 @@ cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
   std::vector<cv::Mat> descriptors_d;
   for (auto descriptor : descriptors) {
     cv::Mat desc;
-    descriptor.convertTo(desc, CV_32FC1);
+    descriptor.convertTo(desc, CV_64FC1);
     descriptors_d.emplace_back(desc);
   }
 
@@ -82,7 +82,7 @@ cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
     recomputeCenters(centroids, clusters);
   }
   // stack k centroids into one multidimensional cv::Mat
-  cv::Mat out(0, centroids[0].size().width, CV_32FC1);
+  cv::Mat out(0, centroids[0].size().width, CV_64FC1);
   for (const auto &centroid : centroids) {
     cv::vconcat(out, centroid, out);
   }
@@ -153,7 +153,7 @@ int main() {
     }
   }
   const int iterations = 10;
-  auto gt = Get3Kmeans();
+  auto gt = Get2Kmeans();
   auto centroids = ipb::kMeans(data, gt.rows, iterations);
   // auto centroids= ipb::getInitialClusterCenters(data,gt.rows);
   cv::sort(centroids, centroids, cv::SORT_EVERY_COLUMN + cv::SORT_ASCENDING);

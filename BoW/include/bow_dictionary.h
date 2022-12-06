@@ -36,7 +36,9 @@ public:
 
   // getter methods
   int max_iterations() const { return n_iter_; };
-  int size() const{return descriptors_.size();}; // number of centroids/ code words
+  int size() const {
+    return descriptors_.size();
+  }; // number of centroids/ code words
   std::vector<cv::Mat> descriptors() const { return descriptors_; };
   cv::Mat vocabulary() const { return codebook_; };
   int total_features() const {

@@ -7,25 +7,25 @@
 #IncludeRegexTransform: 
 
 ../include/codebook.h
+algorithm
+-
+functional
+-
 map
 -
-set
+numeric
 -
 opencv2/core.hpp
 -
 opencv2/opencv.hpp
 -
+random
+-
+set
+-
 string
 -
 vector
--
-functional
--
-numeric
--
-random
--
-algorithm
 -
 
 /home/bruno/Learning/ModernCppCV/BoW/src/codebook.cpp

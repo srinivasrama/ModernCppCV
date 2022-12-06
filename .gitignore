@@ -1,3 +1,2 @@
-./SIFT_Serial/build/
-./BoW/.vscode
-./BoW/build
+./*/.vscode/
+./*/build/

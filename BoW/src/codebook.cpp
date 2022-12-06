@@ -153,7 +153,7 @@ int main() {
     }
   }
   const int iterations = 10;
-  auto gt = Get18Kmeans();
+  auto gt = Get3Kmeans();
   auto centroids = ipb::kMeans(data, gt.rows, iterations);
   // auto centroids= ipb::getInitialClusterCenters(data,gt.rows);
   cv::sort(centroids, centroids, cv::SORT_EVERY_COLUMN + cv::SORT_ASCENDING);

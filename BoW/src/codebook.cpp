@@ -5,9 +5,7 @@ std::vector<cv::Mat> getInitialClusterCenters(const std::vector<cv::Mat> &descri
 std::vector<cv::Mat> centroids;
   centroids.reserve(k);
   int ind = rand() % descriptors.size();
-  cv::Mat descriptor_depth;
-  descriptors[ind].convertTo(descriptor_depth, CV_64FC1);
-  centroids.emplace_back(descriptor_depth);
+  centroids.emplace_back(descriptors[ind]);
 
   while(centroids.size()<k){
     std::vector<double> distances;
@@ -15,42 +13,33 @@ std::vector<cv::Mat> centroids;
         double distance_min= std::numeric_limits<float>::max();
         // find the minimal distance between centroids and descriptor
         for(const auto &centroid: centroids){
-            cv::Mat descriptor_depth_;
-            descriptor.convertTo(descriptor_depth_, CV_64FC1);
-            cv::Mat centroid_;
-            centroid.convertTo(centroid_, CV_64FC1);
-            distance_min= std::min(distance_min,cv::norm(descriptor_depth_, centroid_, cv::NORM_L2SQR));
+            distance_min= std::min(distance_min,cv::norm(descriptor, centroid, cv::NORM_L2SQR));
         }
         distances.emplace_back(distance_min);
     }
     //find maximum distance index from minimal distances
     cv::Mat desc_max= descriptors[std::distance(distances.begin(), std::max_element(distances.begin(), distances.begin() + distances.size()))];
-    cv::Mat desc_max_;
-    desc_max.convertTo(desc_max_, CV_64FC1);
-    centroids.emplace_back(desc_max_);  
+    centroids.emplace_back(desc_max);  
   }
   return centroids;
 }
 
 void assignToClusters(const std::vector<cv::Mat> &descriptors,const std::vector<cv::Mat> &centroids,int k, std::map<int, std::vector<cv::Mat>> &clusters ){
   for (const auto &descriptor : descriptors) {
-      cv::Mat descriptor_depth;
-      descriptor.convertTo(descriptor_depth, CV_64FC1);
-
       float distance_min= std::numeric_limits<float>::max(); 
       int centroid_id = 0;
       // 1. Compute the distance from each point x to each cluster
       // centroid
       for (int j = 0; j < centroids.size(); j++) {
         auto centroid = centroids[j];
-        float current_distance= cv::norm(descriptor_depth, centroid, cv::NORM_L2SQR); 
+        float current_distance= cv::norm(descriptor, centroid, cv::NORM_L2SQR); 
         if (current_distance - distance_min < 0) {
           distance_min = current_distance;
           centroid_id = j;
         }
       }
       // 2. Assign each point to the centroid it is closest to
-      clusters[centroid_id].push_back(descriptor_depth);
+      clusters[centroid_id].push_back(descriptor);
     }
 }
 
@@ -73,12 +62,19 @@ void recomputeCenters(std::vector<cv::Mat> &centroids, const std::map<int, std::
 }
 cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
   // 1. Given cluster centroids i initialized randomly
-  auto centroids= getInitialClusterCenters(descriptors,k);
+  std::vector<cv::Mat> descriptors_d;
+  for(auto descriptor: descriptors){
+      cv::Mat desc;
+      descriptor.convertTo(desc, CV_64FC1);
+      descriptors_d.emplace_back(desc);
+  }
+  
+  auto centroids= getInitialClusterCenters(descriptors_d,k);
   // 2. For iteration t=1..T
   std::map<int, std::vector<cv::Mat>> clusters;
   for (int i = 0; i < max_iter; i++) {
     //2.1 assign clusters
-    assignToClusters(descriptors,centroids, k, clusters );
+    assignToClusters(descriptors_d,centroids, k, clusters );
     // 3. Reassign centroids
     recomputeCenters(centroids,  clusters);
   }
@@ -154,7 +150,7 @@ int main(){
     }
   }
   const int iterations = 10;
-  auto gt= Get18Kmeans();
+  auto gt= Get5Kmeans();
   auto centroids = ipb::kMeans(data, gt.rows, iterations);
   // auto centroids= ipb::getInitialClusterCenters(data,gt.rows);
   cv::sort(centroids, centroids, cv::SORT_EVERY_COLUMN + cv::SORT_ASCENDING);

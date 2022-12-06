@@ -60,7 +60,7 @@ void recomputeCenters(std::vector<cv::Mat> &centroids,
       cv::accumulate(c, acc);
     }
 
-    centroids[x.first] = acc / cluster_.size() * 1.;
+    centroids[x.first] = acc / static_cast<float>(cluster_.size());
   }
 }
 cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {

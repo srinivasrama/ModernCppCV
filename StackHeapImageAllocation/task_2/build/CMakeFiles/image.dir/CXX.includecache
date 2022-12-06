@@ -7,14 +7,14 @@
 #IncludeRegexTransform: 
 
 ../include/image.hpp
+io_strategy.h
+../include/io_strategy.h
+memory
+-
 string
 -
 vector
 -
-memory
--
-io_strategy.h
-../include/io_strategy.h
 
 ../include/io_strategy.h
 vector

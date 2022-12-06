@@ -4,8 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_init.cpp" "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests/CMakeFiles/image_stack_test.dir/test_init.cpp.o"
-  "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_resize.cpp" "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests/CMakeFiles/image_stack_test.dir/test_resize.cpp.o"
+  "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_from_png.cpp" "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests/CMakeFiles/image_stack_test.dir/test_from_png.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

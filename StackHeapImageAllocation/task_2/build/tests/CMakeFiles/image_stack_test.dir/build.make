@@ -57,42 +57,27 @@ include tests/CMakeFiles/image_stack_test.dir/progress.make
 # Include the compile flags for this target's objects.
 include tests/CMakeFiles/image_stack_test.dir/flags.make
 
-tests/CMakeFiles/image_stack_test.dir/test_init.cpp.o: tests/CMakeFiles/image_stack_test.dir/flags.make
-tests/CMakeFiles/image_stack_test.dir/test_init.cpp.o: ../tests/test_init.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/image_stack_test.dir/test_init.cpp.o"
-	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/image_stack_test.dir/test_init.cpp.o -c /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_init.cpp
+tests/CMakeFiles/image_stack_test.dir/test_from_png.cpp.o: tests/CMakeFiles/image_stack_test.dir/flags.make
+tests/CMakeFiles/image_stack_test.dir/test_from_png.cpp.o: ../tests/test_from_png.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/image_stack_test.dir/test_from_png.cpp.o"
+	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/image_stack_test.dir/test_from_png.cpp.o -c /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_from_png.cpp
 
-tests/CMakeFiles/image_stack_test.dir/test_init.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/image_stack_test.dir/test_init.cpp.i"
-	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_init.cpp > CMakeFiles/image_stack_test.dir/test_init.cpp.i
+tests/CMakeFiles/image_stack_test.dir/test_from_png.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/image_stack_test.dir/test_from_png.cpp.i"
+	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_from_png.cpp > CMakeFiles/image_stack_test.dir/test_from_png.cpp.i
 
-tests/CMakeFiles/image_stack_test.dir/test_init.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_stack_test.dir/test_init.cpp.s"
-	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_init.cpp -o CMakeFiles/image_stack_test.dir/test_init.cpp.s
-
-tests/CMakeFiles/image_stack_test.dir/test_resize.cpp.o: tests/CMakeFiles/image_stack_test.dir/flags.make
-tests/CMakeFiles/image_stack_test.dir/test_resize.cpp.o: ../tests/test_resize.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/image_stack_test.dir/test_resize.cpp.o"
-	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/image_stack_test.dir/test_resize.cpp.o -c /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_resize.cpp
-
-tests/CMakeFiles/image_stack_test.dir/test_resize.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/image_stack_test.dir/test_resize.cpp.i"
-	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_resize.cpp > CMakeFiles/image_stack_test.dir/test_resize.cpp.i
-
-tests/CMakeFiles/image_stack_test.dir/test_resize.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_stack_test.dir/test_resize.cpp.s"
-	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_resize.cpp -o CMakeFiles/image_stack_test.dir/test_resize.cpp.s
+tests/CMakeFiles/image_stack_test.dir/test_from_png.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_stack_test.dir/test_from_png.cpp.s"
+	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_from_png.cpp -o CMakeFiles/image_stack_test.dir/test_from_png.cpp.s
 
 # Object files for target image_stack_test
 image_stack_test_OBJECTS = \
-"CMakeFiles/image_stack_test.dir/test_init.cpp.o" \
-"CMakeFiles/image_stack_test.dir/test_resize.cpp.o"
+"CMakeFiles/image_stack_test.dir/test_from_png.cpp.o"
 
 # External object files for target image_stack_test
 image_stack_test_EXTERNAL_OBJECTS =
 
-tests/image_stack_test: tests/CMakeFiles/image_stack_test.dir/test_init.cpp.o
-tests/image_stack_test: tests/CMakeFiles/image_stack_test.dir/test_resize.cpp.o
+tests/image_stack_test: tests/CMakeFiles/image_stack_test.dir/test_from_png.cpp.o
 tests/image_stack_test: tests/CMakeFiles/image_stack_test.dir/build.make
 tests/image_stack_test: libimage.a
 tests/image_stack_test: /usr/local/lib/libopencv_gapi.so.4.6.0
@@ -151,10 +136,11 @@ tests/image_stack_test: /usr/local/lib/libopencv_photo.so.4.6.0
 tests/image_stack_test: /usr/local/lib/libopencv_imgproc.so.4.6.0
 tests/image_stack_test: /usr/local/lib/libopencv_core.so.4.6.0
 tests/image_stack_test: libstrategies.a
+tests/image_stack_test: /usr/lib/x86_64-linux-gnu/libpng.so
 tests/image_stack_test: /usr/local/lib/libgtest_main.a
 tests/image_stack_test: /usr/local/lib/libgtest.a
 tests/image_stack_test: tests/CMakeFiles/image_stack_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable image_stack_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable image_stack_test"
 	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/image_stack_test.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests && /usr/bin/cmake -D TEST_TARGET=image_stack_test -D TEST_EXECUTABLE=/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests/image_stack_test -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=image_stack_test_TESTS -D CTEST_FILE=/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests/image_stack_test[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -P /usr/share/cmake-3.16/Modules/GoogleTestAddTests.cmake
 

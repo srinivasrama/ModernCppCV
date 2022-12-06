@@ -1,7 +1,7 @@
 #include "png_strategy.h"
 
 namespace igg {
-ImageData PngStrategy::Read(const std::string &file) const {
+ImageData PngIoStrategy::Read(const std::string &file) const {
   png::image<png::rgb_pixel> image(file,
                                    png::require_color_space<png::rgb_pixel>());
   ImageData out;
@@ -18,7 +18,7 @@ ImageData PngStrategy::Read(const std::string &file) const {
   return out;
 }
 
-bool PngStrategy::Write(const std::string &file, const ImageData &img) const {
+bool PngIoStrategy::Write(const std::string &file, const ImageData &img) const {
   png::image<png::rgb_pixel> image(img.rows, img.cols);
   for (png::uint_32 i = 0; i < img.rows; i++) {
     for (png::uint_32 j = 0; j < img.cols; j++) {

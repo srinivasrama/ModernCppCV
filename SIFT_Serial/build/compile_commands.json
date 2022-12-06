@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/bruno/Learning/ModernCppCV/SIFT_Serial/build",
+  "command": "/usr/bin/c++   -I/usr/local/include/opencv4 -I/home/bruno/Learning/ModernCppCV/SIFT_Serial/include -I/home/bruno/Learning/ModernCppCV/SIFT_Serial/src  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/convert_dataset.dir/src/convert_dataset.cpp.o -c /home/bruno/Learning/ModernCppCV/SIFT_Serial/src/convert_dataset.cpp",
+  "file": "/home/bruno/Learning/ModernCppCV/SIFT_Serial/src/convert_dataset.cpp"
+},
+{
+  "directory": "/home/bruno/Learning/ModernCppCV/SIFT_Serial/build",
+  "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/SIFT_Serial/include -I/home/bruno/Learning/ModernCppCV/SIFT_Serial/src -isystem /usr/local/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/mat_serialization.dir/src/serialize.cpp.o -c /home/bruno/Learning/ModernCppCV/SIFT_Serial/src/serialize.cpp",
+  "file": "/home/bruno/Learning/ModernCppCV/SIFT_Serial/src/serialize.cpp"
+},
+{
+  "directory": "/home/bruno/Learning/ModernCppCV/SIFT_Serial/build/tests",
+  "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/SIFT_Serial/include -I/home/bruno/Learning/ModernCppCV/SIFT_Serial/src -isystem /usr/local/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++14 -o CMakeFiles/siftserial_test.dir/test_serialize.cpp.o -c /home/bruno/Learning/ModernCppCV/SIFT_Serial/tests/test_serialize.cpp",
+  "file": "/home/bruno/Learning/ModernCppCV/SIFT_Serial/tests/test_serialize.cpp"
+},
+{
+  "directory": "/home/bruno/Learning/ModernCppCV/SIFT_Serial/build/tests",
+  "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/SIFT_Serial/include -I/home/bruno/Learning/ModernCppCV/SIFT_Serial/src -isystem /usr/local/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++14 -o CMakeFiles/siftserial_test.dir/test_convert_dataset.cpp.o -c /home/bruno/Learning/ModernCppCV/SIFT_Serial/tests/test_convert_dataset.cpp",
+  "file": "/home/bruno/Learning/ModernCppCV/SIFT_Serial/tests/test_convert_dataset.cpp"
+},
+{
+  "directory": "/home/bruno/Learning/ModernCppCV/SIFT_Serial/build/tests",
+  "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/SIFT_Serial/include -I/home/bruno/Learning/ModernCppCV/SIFT_Serial/src -isystem /usr/local/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++14 -o CMakeFiles/siftserial_test.dir/test_main.cpp.o -c /home/bruno/Learning/ModernCppCV/SIFT_Serial/tests/test_main.cpp",
+  "file": "/home/bruno/Learning/ModernCppCV/SIFT_Serial/tests/test_main.cpp"
+},
+{
+  "directory": "/home/bruno/Learning/ModernCppCV/SIFT_Serial/build/tests",
+  "command": "/usr/bin/c++  -Dsifts_internal_EXPORTS -I/home/bruno/Learning/ModernCppCV/SIFT_Serial/include -I/home/bruno/Learning/ModernCppCV/SIFT_Serial/src -isystem /usr/local/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g -fPIC   -std=gnu++11 -o CMakeFiles/sifts_internal.dir/sifts_internal.cpp.o -c /home/bruno/Learning/ModernCppCV/SIFT_Serial/tests/sifts_internal.cpp",
+  "file": "/home/bruno/Learning/ModernCppCV/SIFT_Serial/tests/sifts_internal.cpp"
+}
+]

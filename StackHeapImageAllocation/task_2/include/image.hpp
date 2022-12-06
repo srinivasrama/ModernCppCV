@@ -44,7 +44,7 @@ public:
     io_strategy_=strategy_ptr;
   }
 
-  void ReadFromDisk(const std::string &filename);
+  bool ReadFromDisk(const std::string &filename);
 
   void WriteToDisk(const std::string &filename);
 
@@ -54,5 +54,5 @@ private:
   std::vector<Pixel> data_;
   std::shared_ptr<IoStrategy> io_strategy_=nullptr;
 };
-}; // namespace igg
+} // namespace igg
 #endif

@@ -13,8 +13,9 @@ set(DIVISION_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 
 include_directories(${DIVISIBLE_INSTALL_INCLUDE_DIR})
 include_directories(${DIVISION_SOURCE_DIR})
-
+include_directories(${PNG_INCLUDE_DIR})
 add_library(strategies src/png_strategy.cpp)
+target_link_libraries(strategies  ${PNG_LIBRARY})
 
 add_library(image  src/image.cpp)
 target_link_libraries(image ${OpenCV_LIBRARIES} strategies)

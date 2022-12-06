@@ -11,12 +11,7 @@
 },
 {
   "directory": "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests",
-  "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/include -I/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/src -isystem /usr/local/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/image_stack_test.dir/test_init.cpp.o -c /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_init.cpp",
-  "file": "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_init.cpp"
-},
-{
-  "directory": "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build/tests",
-  "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/include -I/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/src -isystem /usr/local/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/image_stack_test.dir/test_resize.cpp.o -c /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_resize.cpp",
-  "file": "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_resize.cpp"
+  "command": "/usr/bin/c++   -I/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/include -I/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/src -isystem /usr/local/include/opencv4  -std=c++17 -pthread -std=c++11 -O3 -g   -std=gnu++11 -o CMakeFiles/image_stack_test.dir/test_from_png.cpp.o -c /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_from_png.cpp",
+  "file": "/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/tests/test_from_png.cpp"
 }
 ]

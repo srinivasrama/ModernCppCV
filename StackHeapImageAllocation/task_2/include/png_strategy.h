@@ -6,7 +6,7 @@
 #include <png++/png.hpp>
 #include <string>
 namespace igg {
-class PngStrategy : public IoStrategy {
+class PngIoStrategy : public IoStrategy {
   ImageData Read(const std::string &file) const override;
   bool Write(const std::string &file, const ImageData &img) const override;
 };

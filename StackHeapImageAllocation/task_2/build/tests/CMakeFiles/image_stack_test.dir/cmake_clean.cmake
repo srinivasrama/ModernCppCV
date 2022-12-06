@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/image_stack_test.dir/test_init.cpp.o"
-  "CMakeFiles/image_stack_test.dir/test_resize.cpp.o"
+  "CMakeFiles/image_stack_test.dir/test_from_png.cpp.o"
   "image_stack_test"
   "image_stack_test.pdb"
   "image_stack_test[1]_tests.cmake"

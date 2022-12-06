@@ -136,59 +136,32 @@ image_stack_test/fast:
 	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build && $(MAKE) -f tests/CMakeFiles/image_stack_test.dir/build.make tests/CMakeFiles/image_stack_test.dir/build
 .PHONY : image_stack_test/fast
 
-test_init.o: test_init.cpp.o
+test_from_png.o: test_from_png.cpp.o
 
-.PHONY : test_init.o
-
-# target to build an object file
-test_init.cpp.o:
-	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build && $(MAKE) -f tests/CMakeFiles/image_stack_test.dir/build.make tests/CMakeFiles/image_stack_test.dir/test_init.cpp.o
-.PHONY : test_init.cpp.o
-
-test_init.i: test_init.cpp.i
-
-.PHONY : test_init.i
-
-# target to preprocess a source file
-test_init.cpp.i:
-	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build && $(MAKE) -f tests/CMakeFiles/image_stack_test.dir/build.make tests/CMakeFiles/image_stack_test.dir/test_init.cpp.i
-.PHONY : test_init.cpp.i
-
-test_init.s: test_init.cpp.s
-
-.PHONY : test_init.s
-
-# target to generate assembly for a file
-test_init.cpp.s:
-	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build && $(MAKE) -f tests/CMakeFiles/image_stack_test.dir/build.make tests/CMakeFiles/image_stack_test.dir/test_init.cpp.s
-.PHONY : test_init.cpp.s
-
-test_resize.o: test_resize.cpp.o
-
-.PHONY : test_resize.o
+.PHONY : test_from_png.o
 
 # target to build an object file
-test_resize.cpp.o:
-	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build && $(MAKE) -f tests/CMakeFiles/image_stack_test.dir/build.make tests/CMakeFiles/image_stack_test.dir/test_resize.cpp.o
-.PHONY : test_resize.cpp.o
+test_from_png.cpp.o:
+	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build && $(MAKE) -f tests/CMakeFiles/image_stack_test.dir/build.make tests/CMakeFiles/image_stack_test.dir/test_from_png.cpp.o
+.PHONY : test_from_png.cpp.o
 
-test_resize.i: test_resize.cpp.i
+test_from_png.i: test_from_png.cpp.i
 
-.PHONY : test_resize.i
+.PHONY : test_from_png.i
 
 # target to preprocess a source file
-test_resize.cpp.i:
-	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build && $(MAKE) -f tests/CMakeFiles/image_stack_test.dir/build.make tests/CMakeFiles/image_stack_test.dir/test_resize.cpp.i
-.PHONY : test_resize.cpp.i
+test_from_png.cpp.i:
+	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build && $(MAKE) -f tests/CMakeFiles/image_stack_test.dir/build.make tests/CMakeFiles/image_stack_test.dir/test_from_png.cpp.i
+.PHONY : test_from_png.cpp.i
 
-test_resize.s: test_resize.cpp.s
+test_from_png.s: test_from_png.cpp.s
 
-.PHONY : test_resize.s
+.PHONY : test_from_png.s
 
 # target to generate assembly for a file
-test_resize.cpp.s:
-	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build && $(MAKE) -f tests/CMakeFiles/image_stack_test.dir/build.make tests/CMakeFiles/image_stack_test.dir/test_resize.cpp.s
-.PHONY : test_resize.cpp.s
+test_from_png.cpp.s:
+	cd /home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2/build && $(MAKE) -f tests/CMakeFiles/image_stack_test.dir/build.make tests/CMakeFiles/image_stack_test.dir/test_from_png.cpp.s
+.PHONY : test_from_png.cpp.s
 
 # Help Target
 help:
@@ -200,12 +173,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... image_stack_test"
-	@echo "... test_init.o"
-	@echo "... test_init.i"
-	@echo "... test_init.s"
-	@echo "... test_resize.o"
-	@echo "... test_resize.i"
-	@echo "... test_resize.s"
+	@echo "... test_from_png.o"
+	@echo "... test_from_png.i"
+	@echo "... test_from_png.s"
 .PHONY : help
 
 

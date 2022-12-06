@@ -241,6 +241,9 @@ image_stack_BINARY_DIR:STATIC=/home/bruno/Learning/ModernCppCV/StackHeapImageAll
 //Value Computed by CMake
 image_stack_SOURCE_DIR:STATIC=/home/bruno/Learning/ModernCppCV/StackHeapImageAllocation/task_2
 
+//Dependencies for the target
+strategies_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libpng.so;
+
 
 ########################
 # INTERNAL cache entries

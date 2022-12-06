@@ -1,0 +1,5 @@
+if(EXISTS "/home/bruno/Learning/ModernCppCV/SIFT_Serial/build/tests/siftserial_test_tests-b12d07c.cmake")
+  include("/home/bruno/Learning/ModernCppCV/SIFT_Serial/build/tests/siftserial_test_tests-b12d07c.cmake")
+else()
+  add_test(siftserial_test_NOT_BUILT-b12d07c siftserial_test_NOT_BUILT-b12d07c)
+endif()

@@ -7,6 +7,7 @@ getInitialClusterCenters(const std::vector<cv::Mat> &descriptors, int k) {
   centroids.reserve(k);
   int ind = rand() % descriptors.size();
   centroids.emplace_back(descriptors[ind]);
+  std::cout<<"Init"<< descriptors[ind] <<std::endl;
   std::set<int> inds;
   inds.insert(ind);
   while (centroids.size() < k) {
@@ -17,6 +18,7 @@ getInitialClusterCenters(const std::vector<cv::Mat> &descriptors, int k) {
      if(!is_in) break;
     }
     inds.insert(ind_);
+    std::cout<<"Init"<< descriptors[ind_] <<std::endl;
     centroids.emplace_back(descriptors[ind_]);
   }
   return centroids;
@@ -27,12 +29,12 @@ void assignToClusters(const std::vector<cv::Mat> &descriptors,
                       std::map<int, std::vector<cv::Mat>> &clusters) {
   for (const auto &descriptor : descriptors) {
     float distance_min = std::numeric_limits<float>::max();
-    int centroid_id = 0;
+    int centroid_id = std::numeric_limits<int>::max();
     // 1. Compute the distance from each point x to each cluster
     // centroid
     for (int j = 0; j < centroids.size(); j++) {
       auto centroid = centroids[j];
-      float current_distance = cv::norm(descriptor, centroid, cv::NORM_L2SQR);
+      float current_distance = cv::norm(centroid, descriptor, cv::NORM_L2SQR);
       if (current_distance - distance_min < 0) {
         distance_min = current_distance;
         centroid_id = j;
@@ -146,7 +148,7 @@ int main() {
     }
   }
   const int iterations = 10;
-  auto gt = Get18Kmeans();
+  auto gt = Get2Kmeans();
   auto centroids = ipb::kMeans(data, gt.rows, iterations);
   // auto centroids= ipb::getInitialClusterCenters(data,gt.rows);
   cv::sort(centroids, centroids, cv::SORT_EVERY_COLUMN + cv::SORT_ASCENDING);

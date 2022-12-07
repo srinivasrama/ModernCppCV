@@ -7,24 +7,17 @@ getInitialClusterCenters(const std::vector<cv::Mat> &descriptors, int k) {
   centroids.reserve(k);
   int ind = rand() % descriptors.size();
   centroids.emplace_back(descriptors[ind]);
-
+  std::set<int> inds;
+  inds.insert(ind);
   while (centroids.size() < k) {
-    std::vector<double> distances;
-    for (const auto &descriptor : descriptors) {
-      double distance_min = std::numeric_limits<float>::max();
-      // find the minimal distance between centroids and descriptor
-      for (const auto &centroid : centroids) {
-        distance_min = std::min(distance_min,
-                                cv::norm(descriptor, centroid, cv::NORM_L2SQR));
-      }
-      distances.emplace_back(distance_min);
+    int ind_;
+    while(true){
+     ind_= rand() % descriptors.size();
+     const bool is_in = inds.find(ind_) != inds.end();
+     if(!is_in) break;
     }
-    // find maximum distance index from minimal distances
-    cv::Mat desc_max = descriptors[std::distance(
-        distances.begin(),
-        std::max_element(distances.begin(),
-                         distances.begin() + distances.size()))];
-    centroids.emplace_back(desc_max);
+    inds.insert(ind_);
+    centroids.emplace_back(descriptors[ind_]);
   }
   return centroids;
 }
@@ -122,7 +115,7 @@ cv::Mat Get5Kmeans() {
   cv::Mat data;
 
   for (int i = 0; i < 100; i += 20) {
-    cv::Mat_<float> vec(rows_num, cols_num, i*1.);
+    cv::Mat_<float> vec(rows_num, cols_num, i );
     data.push_back(vec);
   }
 
@@ -136,7 +129,7 @@ cv::Mat Get18Kmeans() {
 
   for (int i = 0; i < 100; i += 20) {
     for (size_t j = 0; j < 3; j++) {
-      data.push_back(cv::Mat_<float>(rows_num, cols_num, i*1.));
+      data.push_back(cv::Mat_<float>(rows_num, cols_num, i ));
     }
   }
 
@@ -149,11 +142,11 @@ int main() {
 
   for (int i = 0; i < 100; i += 20) {
     for (size_t j = 0; j < 5; j++) {
-      data.push_back(cv::Mat_<float>(rows_num, cols_num, i*1.));
+      data.push_back(cv::Mat_<float>(rows_num, cols_num, i ));
     }
   }
   const int iterations = 10;
-  auto gt = Get2Kmeans();
+  auto gt = Get18Kmeans();
   auto centroids = ipb::kMeans(data, gt.rows, iterations);
   // auto centroids= ipb::getInitialClusterCenters(data,gt.rows);
   cv::sort(centroids, centroids, cv::SORT_EVERY_COLUMN + cv::SORT_ASCENDING);

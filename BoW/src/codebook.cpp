@@ -7,25 +7,26 @@ getInitialClusterCenters(const std::vector<cv::Mat> &descriptors, int k) {
   centroids.reserve(k);
   int ind = rand() % descriptors.size();
   centroids.emplace_back(descriptors[ind]);
-  std::cout<<"Init"<< descriptors[ind] <<std::endl;
+  std::cout << "Init" << descriptors[ind] << std::endl;
   std::set<int> inds;
   inds.insert(ind);
   while (centroids.size() < k) {
     int ind_;
-    while(true){
-     ind_= rand() % descriptors.size();
-     const bool is_in = inds.find(ind_) != inds.end();
-     if(!is_in) break;
+    while (true) {
+      ind_ = rand() % descriptors.size();
+      const bool is_in = inds.find(ind_) != inds.end();
+      if (!is_in)
+        break;
     }
     inds.insert(ind_);
-    std::cout<<"Init"<< descriptors[ind_] <<std::endl;
+    std::cout << "Init" << descriptors[ind_] << std::endl;
     centroids.emplace_back(descriptors[ind_]);
   }
   return centroids;
 }
 
 void assignToClusters(const std::vector<cv::Mat> &descriptors,
-                      const std::vector<cv::Mat> &centroids, int k,
+                      const std::vector<cv::Mat> &centroids,
                       std::map<int, std::vector<cv::Mat>> &clusters) {
   for (const auto &descriptor : descriptors) {
     float distance_min = std::numeric_limits<float>::max();
@@ -72,7 +73,7 @@ cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
   std::map<int, std::vector<cv::Mat>> clusters;
   for (int i = 0; i < max_iter; i++) {
     // 2.1 assign clusters
-    assignToClusters(descriptors_d, centroids, k, clusters);
+    assignToClusters(descriptors_d, centroids, clusters);
     // 3. Reassign centroids
     recomputeCenters(centroids, clusters);
   }
@@ -117,7 +118,7 @@ cv::Mat Get5Kmeans() {
   cv::Mat data;
 
   for (int i = 0; i < 100; i += 20) {
-    cv::Mat_<float> vec(rows_num, cols_num, i );
+    cv::Mat_<float> vec(rows_num, cols_num, i);
     data.push_back(vec);
   }
 
@@ -131,7 +132,7 @@ cv::Mat Get18Kmeans() {
 
   for (int i = 0; i < 100; i += 20) {
     for (size_t j = 0; j < 3; j++) {
-      data.push_back(cv::Mat_<float>(rows_num, cols_num, i ));
+      data.push_back(cv::Mat_<float>(rows_num, cols_num, i));
     }
   }
 
@@ -144,7 +145,7 @@ int main() {
 
   for (int i = 0; i < 100; i += 20) {
     for (size_t j = 0; j < 5; j++) {
-      data.push_back(cv::Mat_<float>(rows_num, cols_num, i ));
+      data.push_back(cv::Mat_<float>(rows_num, cols_num, i));
     }
   }
   const int iterations = 10;

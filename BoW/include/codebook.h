@@ -34,7 +34,7 @@ getInitialClusterCenters(const std::vector<cv::Mat> &descriptors, int k);
  * @param centroids initialized centroids
  */
 void assignToClusters(const std::vector<cv::Mat> &descriptors,
-                      const std::vector<cv::Mat> &centroids, int k,
+                      const std::vector<cv::Mat> &centroids,
                       std::map<int, std::vector<cv::Mat>> &clusters);
 
 /**

@@ -1,0 +1,5 @@
+if(EXISTS "/home/bruno/Learning/ModernCppCV/BoWHisto/build/tests/code_book_test[1]_tests.cmake")
+  include("/home/bruno/Learning/ModernCppCV/BoWHisto/build/tests/code_book_test[1]_tests.cmake")
+else()
+  add_test(code_book_test_NOT_BUILT code_book_test_NOT_BUILT)
+endif()

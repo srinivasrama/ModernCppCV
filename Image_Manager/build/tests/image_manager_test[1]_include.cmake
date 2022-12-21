@@ -1,0 +1,5 @@
+if(EXISTS "/home/bruno/Learning/ModernCppCV/Image_Manager/build/tests/image_manager_test[1]_tests.cmake")
+  include("/home/bruno/Learning/ModernCppCV/Image_Manager/build/tests/image_manager_test[1]_tests.cmake")
+else()
+  add_test(image_manager_test_NOT_BUILT image_manager_test_NOT_BUILT)
+endif()

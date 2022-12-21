@@ -1,0 +1,5 @@
+add_test( BowDictionary.BuildDictionary /home/bruno/Learning/ModernCppCV/BoWHisto/build/tests/code_book_test [==[--gtest_filter=BowDictionary.BuildDictionary]==] --gtest_also_run_disabled_tests)
+set_tests_properties( BowDictionary.BuildDictionary PROPERTIES WORKING_DIRECTORY /home/bruno/Learning/ModernCppCV/BoWHisto/tests)
+add_test( BowDictionary.BuildDictionaryFromData /home/bruno/Learning/ModernCppCV/BoWHisto/build/tests/code_book_test [==[--gtest_filter=BowDictionary.BuildDictionaryFromData]==] --gtest_also_run_disabled_tests)
+set_tests_properties( BowDictionary.BuildDictionaryFromData PROPERTIES WORKING_DIRECTORY /home/bruno/Learning/ModernCppCV/BoWHisto/tests)
+set( code_book_test_TESTS BowDictionary.BuildDictionary BowDictionary.BuildDictionaryFromData)

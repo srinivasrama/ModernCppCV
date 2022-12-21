@@ -1,0 +1,8 @@
+/home/bruno/Learning/ModernCppCV/BoWHisto/build/CMakeFiles/rebuild_cache.dir
+/home/bruno/Learning/ModernCppCV/BoWHisto/build/CMakeFiles/edit_cache.dir
+/home/bruno/Learning/ModernCppCV/BoWHisto/build/CMakeFiles/test.dir
+/home/bruno/Learning/ModernCppCV/BoWHisto/build/CMakeFiles/bow_dictionary.dir
+/home/bruno/Learning/ModernCppCV/BoWHisto/build/tests/CMakeFiles/rebuild_cache.dir
+/home/bruno/Learning/ModernCppCV/BoWHisto/build/tests/CMakeFiles/edit_cache.dir
+/home/bruno/Learning/ModernCppCV/BoWHisto/build/tests/CMakeFiles/test.dir
+/home/bruno/Learning/ModernCppCV/BoWHisto/build/tests/CMakeFiles/code_book_test.dir

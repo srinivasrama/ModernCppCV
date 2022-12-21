@@ -1,2 +1,0 @@
-/usr/bin/ar qc libconvert_dataset.a  CMakeFiles/convert_dataset.dir/src/convert_dataset.cpp.o
-/usr/bin/ranlib libconvert_dataset.a

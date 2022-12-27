@@ -14,6 +14,7 @@ void BowDictionary::set_params(int n_iter, int size,
   set_descriptors(descriptors);
   set_size(size);
   set_max_iterations(n_iter);
+  this->codebook_= kMeans(descriptors, size, n_iter); 
 }
 
 } // namespace ipb

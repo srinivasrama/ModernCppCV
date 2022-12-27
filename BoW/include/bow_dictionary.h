@@ -10,7 +10,7 @@
 #include <set>
 #include <string>
 #include <vector>
-
+#include "codebook.h"
 namespace ipb {
 class BowDictionary {
 private:

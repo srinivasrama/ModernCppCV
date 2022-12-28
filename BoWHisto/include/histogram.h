@@ -12,12 +12,27 @@ class Histogram{
         Histogram(const std::vector<int> &data){
             data_=data;
         };
-        //TODO: imlementation constructor 
         Histogram(const cv::Mat &descriptors, BowDictionary &dictionary);
         //initiate all vector functionality
         int size() const { return data_.size();}
         bool empty() const {return !(data_.size()>0);}
         std::vector<int> data() const{return data_;}
+        int operator[](int ind){
+            return data_[ind];
+        }
+        std::vector<int>::const_iterator begin() const {
+            return data_.begin();
+        }
+        std::vector<int>::const_iterator cbegin () const {
+            return data_.cbegin();
+        }
+        std::vector<int>::const_iterator cend() const {
+            return data_.cend();
+        }
+          std::vector<int>::const_iterator end() const {
+            return data_.cend();
+        }
+
 
     private:
         void histogram(const cv::Mat &descriptors,  BowDictionary &dictionary) ;

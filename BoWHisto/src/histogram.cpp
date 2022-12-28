@@ -13,7 +13,7 @@ void Histogram::histogram(const cv::Mat &descriptors,
   for(int i=0;i<data_.capacity();i++){
     data_.push_back(0.);
   }
-  cv::flann::Index flann_index(dictionary.vocabulary(), cv::flann::KDTreeIndexParams(1));
+  static cv::flann::Index flann_index(dictionary.vocabulary(), cv::flann::KDTreeIndexParams(1));
   unsigned int max_neighbours = 10;
   cv::Mat indices, dists; //neither assume type nor size here !
   double radius= 2.0;
@@ -57,8 +57,8 @@ int main(){
     auto& dictionary = ipb::BowDictionary::GetInstance();
     dictionary.set_vocabulary(Get5Kmeans());
     auto histogram_ = ipb::Histogram(GetAllFeatures(), dictionary);
-    for(int i=0;i<histogram_.data().size(); ++i){
-        std::cout<<"i="<<i<<";"<<"count="<<histogram_.data()[i]<<std::endl;
+    for(auto it=histogram_.begin();it<histogram_.end();it++){
+        std::cout<<"i="<<*it<<std::endl;
     }
     return 0;
 }

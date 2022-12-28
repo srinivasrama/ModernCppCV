@@ -8,7 +8,7 @@
 namespace ipb{
 class Histogram{
     public:
-        Histogram();
+        Histogram(){};
         Histogram(const std::vector<int> &data){
             data_=data;
         };
@@ -20,7 +20,7 @@ class Histogram{
         int operator[](int ind){
             return data_[ind];
         }
-        std::vector<int>::const_iterator begin() const {
+        std::vector<int>::const_iterator begin() {
             return data_.begin();
         }
         std::vector<int>::const_iterator cbegin () const {
@@ -29,11 +29,13 @@ class Histogram{
         std::vector<int>::const_iterator cend() const {
             return data_.cend();
         }
-          std::vector<int>::const_iterator end() const {
-            return data_.cend();
+          std::vector<int>::const_iterator end() {
+            return data_.end();
         }
 
-
+        // class io 
+        Histogram ReadFromCSV(const std::string &file);
+        void WriteToCSV(const std::string &file) const;
     private:
         void histogram(const cv::Mat &descriptors,  BowDictionary &dictionary) ;
         std::vector<int> data_;

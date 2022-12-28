@@ -1,5 +1,7 @@
 #include "histogram.h"
 #include <iostream>
+#include <sstream>
+#include <fstream>
 
 namespace ipb {
 
@@ -23,6 +25,25 @@ void Histogram::histogram(const cv::Mat &descriptors,
     data_[indices.at<int>(0,0)]+=1;
   }       
 }
+
+Histogram Histogram::ReadFromCSV(const std::string &file){
+    std::ifstream ifs{ file };
+     for (std::string line; std::getline(ifs, line, ','); ){
+        data_.push_back(stoi(line));
+     }
+    return Histogram(data_);
+}
+
+void Histogram::WriteToCSV(const std::string &file) const{
+      std::ofstream myfile;
+      myfile.open (file);
+      for(int i=0;i<data_.size()-1;i++){
+        myfile << data_[i] <<",";
+      }
+      myfile << data_[data_.size()-1];
+      myfile.close();
+}
+
 } // namespace ipb
 cv::Mat Get5Kmeans() {
   // init some parameters
@@ -57,8 +78,10 @@ int main(){
     auto& dictionary = ipb::BowDictionary::GetInstance();
     dictionary.set_vocabulary(Get5Kmeans());
     auto histogram_ = ipb::Histogram(GetAllFeatures(), dictionary);
-    for(auto it=histogram_.begin();it<histogram_.end();it++){
-        std::cout<<"i="<<*it<<std::endl;
-    }
+    // for(auto it=histogram_.begin();it<histogram_.end();it++){
+    //     std::cout<<"i="<<*it<<std::endl;
+    // }
+    histogram_.WriteToCSV("/home/bruno/python_scripts/food.csv");
+
     return 0;
 }

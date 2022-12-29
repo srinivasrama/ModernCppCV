@@ -21,9 +21,9 @@ include_directories(${DIVISION_SOURCE_DIR})
 # add libraries
 add_library(bow_dictionary src/bow_dictionary.cpp src/codebook.cpp)
 target_link_libraries(bow_dictionary ${OpenCV_LIBRARIES}  stdc++fs)
-add_executable(histogram src/histogram.cpp)
+add_library(histogram src/histogram.cpp)
 target_link_libraries(histogram ${OpenCV_LIBRARIES}  bow_dictionary)
 
 #unit tests
-# enable_testing ()
-# add_subdirectory (tests)
+enable_testing ()
+add_subdirectory (tests)

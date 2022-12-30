@@ -44,7 +44,6 @@ private:
   void histogram(const cv::Mat &descriptors, BowDictionary &dictionary);
   std::vector<int> data_;
 };
-// TODO: WHy this shit only works outside the class?
 
 } // namespace ipb
 

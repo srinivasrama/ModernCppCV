@@ -14,13 +14,10 @@ void Histogram::histogram(const cv::Mat &descriptors,
   }
   static cv::flann::Index flann_index(dictionary.vocabulary(),
                                       cv::flann::KDTreeIndexParams(1));
-  unsigned int max_neighbours = 10;
   cv::Mat indices, dists; // neither assume type nor size here !
-  double radius =10.0;
   for (int i = 0; i < descriptors.rows; ++i) {
-    flann_index.radiusSearch(descriptors.row(i), indices, dists, radius,
-                             max_neighbours, cv::flann::SearchParams(32));
-    std::cout << indices <<std::endl;
+    flann_index.knnSearch (descriptors.row(i), indices, dists,
+                             dictionary.size(), cv::flann::SearchParams(32));
     data_[indices.at<int>(0, 0)] += 1;
   }
 }

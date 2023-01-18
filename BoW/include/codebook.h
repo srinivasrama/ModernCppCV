@@ -43,8 +43,8 @@ void assignToClusters(const std::vector<cv::Mat> &descriptors,
  * @param clusters aggregate of points per centroid index
  * @param centroids initialized centroids
  */
-void recomputeCenters(std::vector<cv::Mat> &centroids,
-                      const std::map<int, std::vector<cv::Mat>> &clusters);
+ std::vector<cv::Mat> recomputeCenters(int k,
+                      const std::map<int, std::vector<cv::Mat>> &clusters, const std::vector<cv::Mat> centroids);
 
 /**
  * @brief

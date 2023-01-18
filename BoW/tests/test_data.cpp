@@ -41,6 +41,7 @@ cv::Mat GetAllFeatures() {
   return data;
 }
 
+
 cv::Mat Get18Kmeans() {
   // init some parameters
   const int rows_num = 1;

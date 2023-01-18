@@ -8,7 +8,7 @@ getInitialClusterCenters(const std::vector<cv::Mat> &descriptors, int k) {
   int ind = rand() % descriptors.size();
   centroids.emplace_back(descriptors[ind]);
   std::set<int> inds;
-  int ind_prev= ind;
+  inds.insert(ind);
   while (centroids.size() < k) {
     int ind_;
     while(true) {
@@ -28,13 +28,13 @@ void assignToClusters(const std::vector<cv::Mat> &descriptors,
                       std::map<int, std::vector<cv::Mat>> &clusters) {
   for (const auto &descriptor : descriptors) {
     float distance_min = std::numeric_limits<float>::max();
-    int centroid_id = std::numeric_limits<int>::max();
+    int centroid_id =std::numeric_limits<int>::max();
     // 1. Compute the distance from each point x to each cluster
     // centroid
     for (int j = 0; j < centroids.size(); j++) {
       auto centroid = centroids[j];
       float current_distance = cv::norm(centroid, descriptor, cv::NORM_L2);
-      if (current_distance < distance_min  ) {
+      if (current_distance - distance_min<0.00001 ) {
         distance_min = current_distance;
         centroid_id = j;
       }
@@ -59,7 +59,7 @@ void assignToClusters(const std::vector<cv::Mat> &descriptors,
     for (const auto &c : cluster_) {
       cv::accumulate(c, acc);
     }
-    centroids_out.push_back(acc / static_cast<float>(cluster_.size()));
+    centroids_out.push_back(acc /cluster_.size());
     }
     else{
         centroids_out.push_back(centroids[i]);
@@ -71,7 +71,7 @@ void assignToClusters(const std::vector<cv::Mat> &descriptors,
 cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
   // 1. Given cluster centroids i initialized randomly
   std::vector<cv::Mat> descriptors_d;
-  for (auto descriptor : descriptors) {
+  for (const auto &descriptor : descriptors) {
     cv::Mat desc;
     descriptor.convertTo(desc, CV_32FC1);
     descriptors_d.emplace_back(desc);
@@ -86,13 +86,9 @@ cv::Mat kMeans(const std::vector<cv::Mat> &descriptors, int k, int max_iter) {
     assignToClusters(descriptors_d, centroids, clusters);
     // 3. Reassign centroids
     centroids= recomputeCenters(k, clusters, centroids);
-  // for(const auto centroid:centroids){
-  //   std::cout<<"CENTROID"<<centroid<<std::endl;
-  // }
-
   }
   // stack k centroids into one multidimensional cv::Mat
-  cv::Mat out(0, centroids[0].size().width, CV_32FC1);
+  cv::Mat out(0., centroids[0].size().width, CV_32FC1);
   for (const auto &centroid : centroids) {
     cv::vconcat(out, centroid, out);
   }

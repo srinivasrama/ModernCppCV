@@ -28,8 +28,9 @@ static void TestKMeans(const cv::Mat& gt_cluster) {
       << centroids;
 }
 
-// TEST(KMeansCluster, SelectAllFeatures) { TestKMeans(GetAllFeatures()); }
+
+TEST(KMeansCluster, SelectAllFeatures) { TestKMeans(GetAllFeatures()); }
 TEST(KMeansCluster, Use2Words) { TestKMeans(Get2Kmeans()); }
-// TEST(KMeansCluster, Use3Words) { TestKMeans(Get3Kmeans()); }
-// TEST(KMeansCluster, MinimumSignificantCluster) { TestKMeans(Get5Kmeans()); }
-// TEST(KMeansCluster, MoreLabelsThanFeatures) { TestKMeans(Get18Kmeans()); }
+TEST(KMeansCluster, Use3Words) { TestKMeans(Get3Kmeans()); }
+TEST(KMeansCluster, MinimumSignificantCluster) { TestKMeans(Get5Kmeans()); }
+TEST(KMeansCluster, MoreLabelsThanFeatures) { TestKMeans(Get18Kmeans()); }

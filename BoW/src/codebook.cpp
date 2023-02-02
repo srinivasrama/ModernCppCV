@@ -1,4 +1,5 @@
 #include "codebook.h"
+#include <opencv2/core/base.hpp>
 
 namespace ipb {
 std::vector<cv::Mat>
@@ -10,7 +11,7 @@ getInitialClusterCenters(const std::vector<cv::Mat> &descriptors, int k) {
   std::set<int> inds;
   inds.insert(ind);
   while (centroids.size() < k) {
-    int ind_;
+    int ind_=-1;
     while(true) {
       ind_ = rand() % descriptors.size();
       const bool is_in = inds.find(ind_) != inds.end();
@@ -33,7 +34,7 @@ void assignToClusters(const std::vector<cv::Mat> &descriptors,
     // centroid
     for (int j = 0; j < centroids.size(); j++) {
       auto centroid = centroids[j];
-      float current_distance = cv::norm(centroid, descriptor, cv::NORM_L2);
+      float current_distance = cv::norm(centroid, descriptor, cv::NORM_L2SQR);
       if (current_distance - distance_min<0.00001 ) {
         distance_min = current_distance;
         centroid_id = j;
@@ -48,7 +49,6 @@ void assignToClusters(const std::vector<cv::Mat> &descriptors,
                       const std::map<int, std::vector<cv::Mat>> &clusters, const std::vector<cv::Mat> centroids) {
   std::vector<cv::Mat> centroids_out;
   centroids_out.reserve(k);
-
   // 3. Reassign centroids
   for (int i=0;i<k;i++) {
     auto pos = clusters.find(i);

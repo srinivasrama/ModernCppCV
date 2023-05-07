@@ -6,7 +6,7 @@
 
 |                          Homework #                          |           Title            |                        Homework sheet                        |                        Files and Data                        | MyStatus                |
 | :----------------------------------------------------------: | :------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | ----------------------- |
-:construction:           |
+|
 | **[SIFT_Serial](https://www.ipb.uni-bonn.de/html/teaching/modern-cpp/homeworks/homework_5.pdf)**(*) | SIFT Serialization Library | **[SIFT_Serial_pdf](https://www.ipb.uni-bonn.de/html/teaching/modern-cpp/homeworks/homework_5.pdf)** | **[SIFT_Serial_pdf.zip](https://www.ipb.uni-bonn.de/html/teaching/modern-cpp/homeworks/homework_5.zip)** | :ballot_box_with_check:         |
 | **[Image_Manager](https://www.ipb.uni-bonn.de/html/teaching/modern-cpp/homeworks/homework_6.pdf)** |        C++ Classes         | **[Image_Manager_pdf](https://www.ipb.uni-bonn.de/html/teaching/modern-cpp/homeworks/homework_6.pdf)** | **[homewImage_Manager_pdfork_6.zip](https://www.ipb.uni-bonn.de/html/teaching/modern-cpp/homeworks/homework_6.zip)** | :ballot_box_with_check: |
 | **[BoW](https://www.ipb.uni-bonn.de/html/teaching/modern-cpp/homeworks/homework_7.pdf)**(*) |      BoVW Dictionary       | **[BoW_pdf](https://www.ipb.uni-bonn.de/html/teaching/modern-cpp/homeworks/homework_7.pdf)** | **[BoW.zip](https://www.ipb.uni-bonn.de/html/teaching/modern-cpp/homeworks/homework_7.zip)** | :ballot_box_with_check:          |
@@ -18,3 +18,5 @@
 ## Acknowledgement 
 
 :smile: Thanks to [Ignacio Vizzo](https://github.com/nachovizzo) and Prof. [Cyrill Stachniss](https://www.ipb.uni-bonn.de/people/cyrill-stachniss/) from University of Bonn for open-sourcing these amazing course materials !
+
+PS: Kmeans implementation on BoW project is failing one for no available reason. if you can find the reason I really appreciated.

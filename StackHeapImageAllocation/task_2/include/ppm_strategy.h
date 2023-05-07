@@ -1,5 +1,5 @@
-#ifndef PNGSTRATEGY_HPP_
-#define PNGSTRATEGY_HPP_
+#ifndef PPMIOSTRATEGY_HPP_
+#define PPMIOSTRATEGY_HPP_
 
 #include "io_strategy.h"
 #include <iostream>
@@ -7,7 +7,7 @@
 #include <string>
 
 namespace igg {
-class PngStrategy : public IoStrategy {
+class PpmIoStrategy : public IoStrategy {
 public:
   ImageData Read(const std::string &file) const override;
   bool Write(const std::string &file, const ImageData &img) const override;

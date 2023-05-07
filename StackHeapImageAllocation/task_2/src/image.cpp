@@ -7,14 +7,16 @@ bool Image::ReadFromDisk(const std::string &filename) {
   if (io_strategy_ == nullptr) {
     exit(1);
   }
-  ImageData img= io_strategy_->Read(filename);
+  ImageData img = io_strategy_->Read(filename);
   std::vector<Pixel> out_data;
-  out_data.reserve(img.rows*img.cols);
-  for(auto i=0;i< img.data.size();i++){
-    Pixel pix{img.data[i][0],img.data[i][1],img.data[i][2]};
+  out_data.reserve(img.rows * img.cols);
+  for (auto i = 0; i < img.data.size(); i++) {
+    Pixel pix{img.data[i][0], img.data[i][1], img.data[i][2]};
     out_data.emplace_back(pix);
   }
-  data_=out_data;
+  data_ = out_data;
+  rows_=img.rows;
+  cols_=img.cols;
   return true;
 }
 
@@ -22,18 +24,20 @@ void Image::WriteToDisk(const std::string &filename) {
   if (io_strategy_ == nullptr) {
     exit(1);
   }
-    std::vector<std::vector<int>> out_data;
-  out_data.reserve(rows_*cols_);
-  for(auto i=0;i< data_.size();i++){
-    std::vector<int> pix{data_[i].red,data_[i].green,data_[i].blue};
+  std::vector<std::vector<int>> out_data;
+  out_data.reserve(rows_ * cols_);
+  for (auto i = 0; i < data_.size(); i++) {
+    std::vector<int> pix{data_[i].red, data_[i].green, data_[i].blue};
     out_data.emplace_back(pix);
   }
   ImageData d;
-  d.data= out_data;
-  d.rows=rows_;
-  d.cols=cols_;
-  d.max_val= 255;
-  if(io_strategy_->Write(filename,d)){return;}
+  d.data = out_data;
+  d.rows = rows_;
+  d.cols = cols_;
+  d.max_val = 255;
+  if (io_strategy_->Write(filename, d)) {
+    return;
+  }
 }
 void Image::DownScale(int scale) {
   int rows_scaled = rows_ / scale;

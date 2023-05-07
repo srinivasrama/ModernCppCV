@@ -10,7 +10,7 @@
 #include <set>
 #include <string>
 #include <vector>
-
+#include "codebook.h"
 namespace ipb {
 class BowDictionary {
 private:
@@ -36,18 +36,30 @@ public:
 
   // getter methods
   int max_iterations() const { return n_iter_; };
-  int size() const{return descriptors_.size();}; // number of centroids/ code words
-  std::vector<cv::Mat> descriptors() const { return descriptors_; };
-  cv::Mat vocabulary() const { return codebook_; };
-  int total_features() const {
-    return descriptors_.size();
-  }; // number of input features
-  bool empty() const { return !(descriptors_.size() > 0); };
-  // setter methods
-  void set_max_iterations(int iter_) { n_iter_ = iter_; }
-  void set_size(int n) { descriptors_.resize(n); }
-  void set_descriptors(const std::vector<cv::Mat> &input);
-  void set_params(int n_iter, int size, std::vector<cv::Mat> descriptors);
+std::vector<cv::Mat> descriptors() const { return descriptors_; };
+cv::Mat vocabulary() const { return codebook_; };
+int total_features() const {
+  int total=0;
+  //TODO: (descriptors_.size()-1)*descriptors_[0].rows) the same than total? 
+  for(const auto &descriptor: descriptors_)
+    total+=descriptor.rows;
+  return total;
+}; // number of input features
+// setter methods
+void set_max_iterations(int iter_) { n_iter_ = iter_; }
+void set_size(int n) {
+    codebook_= cv::Mat::zeros(n, descriptors_[0].size().width, CV_64F);
+ }
+void set_descriptors(const std::vector<cv::Mat> &input);
+void set_params(int n_iter, int size, std::vector<cv::Mat> descriptors);
+int size() const {
+  cv::Size s = this->codebook_.size();
+  return s.height;
 };
+bool empty() const {
+  cv::Size s = this->codebook_.size();
+  return s.height == 0;
+}
+}; // namespace ipb
 } // namespace ipb
 #endif

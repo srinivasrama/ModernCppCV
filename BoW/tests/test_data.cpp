@@ -11,11 +11,11 @@
 using namespace std;
 using namespace cv;
 
-std::vector<cv::Mat>& GetDummyData() {
+std::vector<cv::Mat> GetDummyData() {
   // init some parameters
   const int rows_num = 1;
   const int cols_num = 10;
-  static std::vector<Mat> data;
+  std::vector<Mat> data;
 
   for (int i = 0; i < 100; i += 20) {
     for (size_t j = 0; j < 5; j++) {
@@ -40,7 +40,6 @@ cv::Mat GetAllFeatures() {
 
   return data;
 }
-
 
 cv::Mat Get18Kmeans() {
   // init some parameters
@@ -90,8 +89,8 @@ cv::Mat Get2Kmeans() {
   const int cols_num = 10;
   Mat data;
 
-  data.push_back(Mat_<float>(rows_num, cols_num, 20.000002F));
-  data.push_back(Mat_<float>(rows_num, cols_num, 70.0F));
+  data.push_back(Mat_<float>(rows_num, cols_num, 10.0F));
+  data.push_back(Mat_<float>(rows_num, cols_num, 60.000004F));
 
   return data;
 }

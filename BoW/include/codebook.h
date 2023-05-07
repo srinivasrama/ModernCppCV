@@ -11,6 +11,8 @@
 #include <string>
 #include <vector>
 namespace ipb {
+
+float euclideanDistance(const cv::Mat &a, const cv::Mat &b) ;
 /**
  * @brief
  * 1. The first centroid to the location of a randomly selected data point

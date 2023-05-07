@@ -9,17 +9,17 @@ add_definitions(${OpenCV_DEFINITIONS})
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O3")
-
+set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR})
-
+add_compile_options(-g)
 set(DIVISIBLE_INSTALL_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 set(DIVISION_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 
 include_directories(${DIVISIBLE_INSTALL_INCLUDE_DIR})
 include_directories(${DIVISION_SOURCE_DIR})
 
-# add_executable(kmeans ${DIVISION_SOURCE_DIR}/codebook.cpp)
-# target_link_libraries(kmeans ${OpenCV_LIBRARIES})
+ #add_executable(kmeans ${DIVISION_SOURCE_DIR}/codebook.cpp)
+ #target_link_libraries(kmeans ${OpenCV_LIBRARIES})
 
 # add  library
 add_library(kmeans  src/codebook.cpp)

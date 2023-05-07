@@ -9,8 +9,8 @@
 using namespace std;
 using namespace cv;
 
-static void TestKMeans(const cv::Mat& gt_cluster) {
-  auto& data = GetDummyData();
+void TestKMeans(const cv::Mat& gt_cluster) {
+  auto data = GetDummyData();
 
   const int dict_size = gt_cluster.rows;
   const int iterations = 10;

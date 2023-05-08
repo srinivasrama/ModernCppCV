@@ -15,7 +15,7 @@ std::vector<cv::Mat> GetDummyData() {
   // init some parameters
   const int rows_num = 1;
   const int cols_num = 10;
-  std::vector<Mat> data;
+   std::vector<Mat> data;
 
   for (int i = 0; i < 100; i += 20) {
     for (size_t j = 0; j < 5; j++) {

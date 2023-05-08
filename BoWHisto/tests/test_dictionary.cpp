@@ -25,7 +25,7 @@ bool inline mat_are_equal(const cv::Mat& m1, const cv::Mat& m2) {
 }  // namespace
 
 TEST(BowDictionary, BuildDictionary) {
-  const auto& descriptors = GetDummyData();
+  const auto descriptors = GetDummyData();
   dictionary.build(max_iter, dict_size, descriptors);
   ASSERT_TRUE(!dictionary.empty());
   ASSERT_EQ(dictionary.size(), dict_size);
